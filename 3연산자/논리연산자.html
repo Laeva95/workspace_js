@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            논리 연산자
+            피연산자를 논리적으로 평가한 뒤 조건에 맞는 피연산자를 반환하는 연산을 수행하는 연산자
+            ||, &&, !
+
+            왼쪽의 피연산자부터 평가
+            &&는 피연산자가 false 일 경우 해당 피연산자 반환 이후 피연산자 평가 생략
+            false가 없다면 마지막 피연산자 반환
+            ||는 피연산자가 true 일 경우 해당 피연산자 반환 이후 피연산자 평가 생략
+            true가 없다면 마지막 피연산자 반환
+
+            false, 0, “”, null, undefined, NaN: false 취급
+            그 외 나머지: true 취급
+
+        */
+       
+        // &&
+        // false 피연산자가 존재한다면 해당 피연산자 즉시 반환
+        // false 피연산자가 존재하지 않는다면 마지막 피연산자 반환
+        console.log("" && "cat");                   // "" 출력
+
+        console.log(undefined && "cat");            // undefined 출력
+
+        console.log(0 && "cat");                    // 0 출력
+
+        console.log(null && "cat");                 // null 출력
+
+        // ---------------------------------------------------------------------------------------
+
+        console.log("cat" && "dog");                // dog 출력
+
+        console.log("cat" && "dog" && "bird");      // bird 출력
+
+        // --------------------------------------------------------------------------------------- 
+
+        // ||
+        // true 피연산자가 존재한다면 해당 피연산자 즉시 반환
+        // true 피연산자가 존재하지 않는다면 마지막 피연산자 반환
+
+        console.log("" || "cat");                   // cat 반환
+
+        console.log("dog" || "cat");                // dog 반환
+
+        // --------------------------------------------------------------------------------------- 
+
+        // !
+        // 피연산자나 식을 평가한 논리 값의 반대 값을 반환
+
+        console.log(!false);                        // true 반환
+
+        console.log(!(10 < 20));                    // false 반환
+
+        console.log(!(10 < 20 && 20 < 10));         // true 반환
+
+    </script>
+</body>
+</html>

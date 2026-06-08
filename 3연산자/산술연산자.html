@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 주제: 산술 연산자 중에 나누기 연산자 /, 나머지 연산자 % 비교해보기
+        let numberOne = 15 / 2;             // 7.5
+        // 결론: 15를 2로 나누면 7.5
+        // 정수 15를 정수 2로 나누었을 때 소수점 이하의 값이 발생
+        // 따라서 15를 2로 나누면 7.5가 나오는 것은 소수점 이하를 포함할 수 있기 때문
+        document.write(numberOne, "<br>"); // <body>태그 사이에 출력하는 함수
+
+        let numberTwo = 15 % 2;             // 1
+
+        document.write(numberTwo, "<br>"); // <body>태그 사이에 출력하는 함수
+        
+        document.write("---------------------------------------<br>");
+
+        let numberA = 1;
+        let numberB = 2;
+
+        // numberA 변수에 저장된 값과 numberB 변수에 저장된 값의 합을 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA + numberB, "<br>");      // 3
+
+        // numberA 변수에 저장된 값과 numberB 변수에 저장된 값을 뺀 값을 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA - numberB, "<br>");      // -1
+
+        // numberA 변수에 저장된 값과 numberB 변수에 저장된 값을 곱하고 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA * numberB, "<br>");      // 2
+        
+        // numberA 변수에 저장된 값을 numberB 변수에 저장된 값으로 나눈 나머지값을 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA % numberB, "<br>");      // 1
+
+        // numberA 변수에 저장된 값을 numberB 변수에 저장된 값으로 나눈 몫을 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA / numberB, "<br>");      // 0.5
+
+        document.write("---------------------------------------<br>");
+
+        // +, - 연산보다 *, /, % 연산을 우선함
+        // 괄호 내부의 연산을 우선함
+        // 같은 우선 순위라면 왼쪽 계산식을 우선함
+        let result4 = 1 + 2 * 10;                       // 21
+        
+        document.write(result4, "<br>");
+
+        let result5 = (1 + 2) * 10;                     // 30
+
+        document.write(result5, "<br>");
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 증감 연산자
+
+        let num1 = 10; let num2 = 20; let result;
+        // num1 변수 메모리에 10이 저장되어 있을 때 1을 차감한 뒤 만들어진 9를 다시 저장
+        // num1 = num1 - 1;
+        // num1 -= 1;
+        // num1--;
+
+        num1--;
+
+        document.write(num1, "<br>");
+
+        num1++;
+
+        document.write(num1, "<br>");
+
+        result = num2++;                // result = 20      num2 = 21
+
+        document.write(result, "<br>");
+        document.write(num2, "<br>");
+
+        result = ++num2;                // result = 22      num2 = 22
+
+        document.write(result, "&nbsp;&nbsp;", num2);
+
+    </script>
+</body>
+</html>

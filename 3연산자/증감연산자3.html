@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 3;
+        let b = 4;
+        let c = a++ + ++b + b++ + ++a;              // 3 + 5 + 5 + 5 = 18
+        /*
+            계산 과정
+            a++ = 계산식에 a값(3) 추가하고 a에 1 추가 => a = 4
+            ++b = b에 1 추가하고 계산식에 b값(5) 추가 => b = 5
+            b++ = 계산식에 b값(5) 추가하고 b에 1 추가 => b = 6
+            ++a = a에 1 추가하고 계산식에 a값(5) 추가 => a = 5
+        */
+
+        console.log(c);                             // 18
+        console.log(a);                             // 5
+        console.log(b);                             // 6
+
+    </script>
+</body>
+</html>
