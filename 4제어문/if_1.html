@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            사이트 방문자에게 입력받은 걸음 수를 if 조건문을 통해
+            하루 10000보 이상일 때 실행문 출력
+        */
+
+        // 입력창에 입력 받은 값을 walkAmount 변수에 저장
+        let walkAmount = prompt("당신이 하루에 걷는 양은 얼마인가요?", "0");
+
+        // 조건식이 true일 때 내부 실행문 실행
+        // walkAmount가 10000 이상이라면
+       if (walkAmount >= 10000) {
+            // 해당 실행문 실행
+            document.write("매우 좋은 습관을 지니고 계시는군요!");
+       }
+
+       // 입력한 값이 10000이상인 경우 조건식의 결과가 true 이므로 실행문의 코드를 실행함
+       // 입력한 값이 10000미만인 경우 조건식의 결과가 false 이므로 실행문의 코드를 실행하지 않음
+    </script>
+</body>
+</html>

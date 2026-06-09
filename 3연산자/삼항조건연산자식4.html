@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            삼항조건연산자식을 이용한 엘리베이터 동작 구현
+        */
+
+        // 엘리베이터 상태와 화살표 버튼 종류를 저장할 변수
+        let currentFloor = 1;       // 현재 위치
+        let button = '';            // 'up' 또는 'down'
+        let direction = '';         // 방향
+
+        // button의 값이 'up'일 때
+        // direction 변수 메모리에 'up' 저장
+        
+        button = 'up';
+
+        direction = button === 'up' ? 'up' : 'down';
+
+        currentFloor = direction === 'up' ? currentFloor + 1 : currentFloor - 1;
+
+        console.log(`엘리베이터가 ${direction === 'up' ? '올라갑니다' : '내려갑니다'}. 현재 층: ${currentFloor}층`);
+
+        // --------------------------------------------------------------------------------------------------------
+
+        button = 'down'
+
+        direction = button === 'down' ? 'down' : 'up';
+
+        currentFloor = direction === 'down' ? currentFloor - 1 : currentFloor + 1;
+
+        console.log(`엘리베이터가 ${direction === 'down' ? '내려갑니다' : '올라갑니다'}. 현재 층: ${currentFloor}층`);
+
+
+        // 함수로 만들어 본다면?
+        
+        // getButton('up');
+        // getButton('down');
+
+        // function getButton(_button) {
+            
+        //     direction = _button === 'down' ? 'down' : 'up';
+
+        //     currentFloor = direction === 'down' ? currentFloor - 1 : currentFloor + 1;
+
+        //     console.log(`엘리베이터가 ${direction === 'down' ? '내려갑니다' : '올라갑니다'}. 현재 층: ${currentFloor}층`);
+        // }
+    </script>
+</body>
+</html>

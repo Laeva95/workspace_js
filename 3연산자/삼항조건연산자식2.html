@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            삼항조건연산자식을 이용해서 변수에 저장된 값이 홀수인지 짝수인지 판단하기
+        */
+
+        let num = 1;
+        let result;
+
+        result = num % 2 === 0 ? "짝수" : "홀수";
+
+        console.log(`num의 값은 ${num}이며 ${result}입니다.`);                      // num의 값은 1이며 홀수입니다.
+
+        num = 10;
+
+        num % 2 !== 0 ? console.log("홀수입니다.") : console.log("짝수입니다.");     // 짝수입니다.
+        
+    </script>
+</body>
+</html>
