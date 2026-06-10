@@ -12,33 +12,32 @@
             입력받은 월에 따라 각각 다른 문장을 출력하는 예
         */
 
-        let month = prompt("현재 몇월 인가요?");
+        // 사이트 방문자에게 현재 몇월인지 입력받아서 저장
+        let mon = prompt("현재 몇월인지 입력하세요!");
 
-        if (month === 1) {
-            
-        } else if(month === 2) {
-
-        } else if(month === 3) {
-
-        } else if(month === 4) {
-
-        } else if(month === 5) {
-
-        } else if(month === 6) {
-
-        } else if(month === 7) {
-
-        } else if(month === 8) {
-
-        } else if(month === 9) {
-
-        } else if(month === 10) {
-
-        } else if(month === 11) {
-
-        } else{
-
+        // 입력 받은 값이 9 ~ 11 사이라면
+        if (mon >= 9 && mon <= 11) {
+            // 브라우저에서 출력
+            document.write("독서의 계절 가을이네요!");
+        } 
+        // 입력 받은 값이 6 ~ 8 사이라면
+        else if(mon >= 6 && mon <= 8) {
+            // 브라우저에서 출력
+            document.write("여행 가기 좋은 여름이네요!");
+        } 
+        // 입력 받은 값이 3 ~ 5 사이라면
+        else if(mon >= 3 && mon <= 5) {
+            // 브라우저에서 출력
+            document.write("햇살 가득한 봄이네요!");
+        } 
+        // 입력 받은 값이 그 외라면
+        // 즉 12, 1, 2 중 하나라면
+        else{
+            // 브라우저에서 출력
+            document.write("스키의 계절 겨울이네요!");
         }
+
+        
 
     </script>
 </body>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            사이트 방문자에게 현대 몇월 달인지 입력받음
+            입력받은 월에 따라 각각 다른 문장을 출력하는 예
+        */
+
+        // 사이트 방문자에게 현재 몇월인지 입력받아서 저장
+        let mon = prompt("현재 몇월인지 입력하세요!");
+        let msg;
+        switch (mon) {
+            // 입력 받은 값이 9 ~ 11 사이라면
+            case "9":
+            case "10":
+            case "11":
+                // msg 입력
+                msg = "독서의 계절 가을이네요!";
+                break;
+            // 입력 받은 값이 6 ~ 8 사이라면
+            case "6":
+            case "7":
+            case "8":
+                // msg 입력
+                msg = "여행 가기 좋은 여름이네요!";
+                break;
+            // 입력 받은 값이 3 ~ 5 사이라면
+            case "3":
+            case "4":
+            case "5":
+                // msg 입력
+                msg = "햇살 가득한 봄이네요!";
+                break;
+            // 입력 받은 값이 그 외라면
+            // 즉 12, 1, 2 중 하나라면
+            default:
+                // msg 입력
+                msg = "스키의 계절 겨울이네요!";
+                break;
+        }
+        document.write(msg);
+    </script>
+</body>
+</html>

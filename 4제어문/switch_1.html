@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            switch(조건값){
+                case 조건1:
+                    실행문1
+                    break;
+                case 조건2:
+                    실행문2
+                    break;
+                default:
+                    실행문 마지막
+                    break;
+            }
+        */
+
+        switch (10) {
+            case 1:
+                document.write("10과 1은 같다.");
+                break;
+            case 2:
+                document.write("10과 2는 같다.");
+                break;
+            case 3, 4, 5:
+                document.write("10이 3 또는 4 또는 5와 같다.");
+                break;
+            case 10:
+                document.write("10과 10은 같다.");
+                break;
+            default:
+                document.write("모두 다르다.");
+                break;
+        }
+
+
+        document.write("-------------------------------------------------------<br>");
+
+        /*
+            사이트 이용자에게 즐겨 이용하는 사이트명을 입력받아서
+            입력받은 사이트를 자동으로 재요청해서 웹브라우저 화면에 보여주는 예
+        */
+
+        let site = prompt("네이버, 다음, 네이트, 구글 중에서 즐겨 이용하는 사이트 이름을 입력하세요.");
+
+        // 입력받은 사이트명에 따라 실제 HTTP 요청할 URL을 저장하기 위한 변수
+        let url;
+
+        // site에 입력된 값에 따라 url에 사이트 주소 입력
+        switch (site) {
+            case "네이버":                              // site === 네이버
+                url = "www.naver.com";
+                break;
+            case "다음":                                // site === 다음
+                url = "www.daum.net";
+                break;
+            case "네이트":                              // site === 네이트
+                url = "www.nate.com";
+                break;
+            case "구글":                                // site === 구글
+                url = "www.google.com";
+                break;
+            default:                                   // site가 네이버, 다음, 네이트, 구글이 아닐 경우
+                alert("유효하지 않은 사이트명입니다!");
+                break;
+        }
+
+        if(url){
+            // location 객체의 href 속성을 이용해 url 주소를 재요청
+            location.href = "https://" + url;          // "https://www.google.com"
+        } else{
+            location.reload();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            간단한 계산기
+            사용자에게 두 숫자와 연산자를 입력 받음(+, -, *, /)기호 중 하나를 입력받아 연산 결과를 출력하는 프로그램
+        */
+
+        // 사용자에게 값 입력 받음
+        let num1 = parseFloat(prompt("계산하기 위한 첫번째 값을 입력하세요.", "0"), 10);            // 10진수 float 값으로 반환
+
+        let operator = prompt("계산을 수행하기 위한 연산자(+, -, *, /)를 입력하세요.", "+");
+
+        let num2 = parseFloat(prompt("계산하기 위한 두번째 값을 입력하세요.", "0"), 10);            // 10진수 float 값으로 반환
+
+        // 계산된 값을 저장하기 위한 변수
+        let result;
+
+        switch (operator) {
+            // 두번째 입력값이 +일 경우 덧셈
+            case "+":
+                result = num1 + num2;
+                break;
+            // 두번째 입력값이 -일 경우 뺄셈
+            case "-":
+                result = num1 - num2;
+                break;
+            // 두번째 입력값이 *일 경우 곱셈
+            case "*":
+                result = num1 * num2;
+                break;
+            // 두번째 입력값이 /일 경우 나눗셈
+            case "/":
+                // 나눗셈은 num2가 0이면 에러 발생
+                if(num2 === 0){
+                    result = "값을 0으로 나눌 수 없습니다!";
+                }else{
+                    result = num1 / num2;
+                }
+                break;
+            // 두번째 입력값이 연산자가 아니거나 잘못 입력 했을 경우 에러 발생
+            default:
+                result = "잘못된 연산자입니다!";
+                break;
+        }
+        if(result){
+            document.write(result);
+        }
+    
+
+    </script>
+</body>
+</html>
