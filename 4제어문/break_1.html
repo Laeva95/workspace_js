@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            for 반복문 작성
+            let i = 1; i <= 10; i++
+
+            i변수에 저장된 숫자 1부터 10사이의 숫자 중에서 1, 2, 3, 4, 5만 출력
+        */
+
+        // i는 1부터 10까지 10번 반복
+        for(let i = 1; i <= 10; i++){
+            // i가 6과 같다면
+            if(i === 6){
+                // 강제로 for문 종료
+                break;
+            }
+            // i가 5이하라면 출력
+            document.write(i, "<br>");
+        }
+
+        document.write("-------------------------------------<br>");
+
+        i = 1;
+
+        // i가 10보다 작다면 반복 실행
+        while(i <= 10){
+            // i가 6과 같다면
+            if(i === 6){
+                // 반복문 종료
+                break;
+            }
+
+            // i값을 출력하고 1을 더해줌
+            document.write(i++, "<br>");
+        }
+
+    </script>
+</body>
+</html>

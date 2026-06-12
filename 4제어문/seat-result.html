@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 테이블과 셀에 대해 동일한 스타일 적용 */
+        table, td{
+            /* 
+                테이블과 셀의 테두리 선 설정
+                테이블 바깥 테두리 선과 셀의 바깥 테두리 선이 합쳐서 중복 되지 않도록 하기
+            */
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        /* 테이블 셀에 대해서만 적용 */
+        td{
+            padding: 5px;
+            font-size: 0.9em; /* 글자 크기를 0.9em으로 설정 
+                                    em: 부모 요소에 비례한 크기 */
+
+            width: 100px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        입장객 수와 한 줄에 앉을 수 있는 사람의 수를 입력 받아서
+        좌석 배치도를 생성하는 프로그램
+    -->
+    <h1>자리 배치도</h1>
+    <script>
+        // 행의 위치를 i, 열의 위치를 j에 저장
+        let i, j;
+
+        // 전체 입장객 수를 memNum 변수에 저장
+        let memNum = prompt("입장객은 몇 명인가요?");
+
+        // 한 줄에 앉을 수 있는 사람의 수를 colNum 변수에 저장
+        let colNum = prompt("한 줄에 몇 명씩 앉습니까?");
+
+        /* 전체 행 수를 계산하여 rowNum 변수에 저장 */
+        // 전체 입장객 수를 한 줄에 앉을 수 있는 사람의 수로 나누어서 계산
+        // 단, 나머지 값이 0이 아니라면 나누어 떨어지지 않으므로 1을 추가해서 행 계산
+        let rowNum = memNum % colNum === 0 
+        ? parseInt(memNum / colNum) 
+        : parseInt(memNum / colNum) + 1;
+
+        /* 테이블 표를 생성해서 좌석 배치 */
+        // 테이블 표 시작
+        document.write("<table>");
+
+        for(i = 0; i < rowNum; i++){
+            // 테이블 행 시작
+            document.write("<tr>");
+            for(j = 1; j <= colNum; j++){
+                // 현재 행 x 열 수를 곱하고 현재 열을 더해서 몇 번째 좌석인지 저장
+                let seatNo = (i * colNum) + j;
+
+                // 좌석 번호가 전체 입장객 수보다 크다면 for문 종료
+                if(seatNo > memNum){
+                    break;
+                }
+                // 테이블 데이터 입력
+                document.write(`<td>좌석 ${seatNo}</td>`);
+            }
+            // 테이블 행 종료
+            document.write("</tr>");
+        }
+
+        // 테이블 표 종료
+        document.write("</table>");
+    </script>
+</body>
+</html>

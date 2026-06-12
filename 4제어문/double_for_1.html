@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            중첩 for문을 이용한 구구단
+            2단부터 9단까지 결과를 for문을 이용해서 출력
+        */
+
+        // i는 2부터 9까지
+        for(let i = 2; i <= 9; i++){
+            // 현재 몇 단인지 i를 출력
+            document.write(`<h1>${i}단</h1>`);
+
+            // i단의 j번째 곱을 출력
+            for(let j = 1; j <= 9; j++){
+                document.write(`${i} x ${j} = ${i * j}<br>`);
+            } // ---> 바깥쪽 for문
+        } // ---> 안쪽 for문
+
+        /*
+            바깥쪽 for문의 반복 횟수 * 안쪽 for문의 반복 횟수만큼 실행됨
+            시간복잡도 O(n^2)
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 바깥쪽 for에서 9번 반복되면서 출력되는 div 스타일 정의 */
+        div{
+            border: 1px solid gray;       /* 바깥 경계선 설정 */
+            padding: 0 20px 30px 20px;      /* 안쪽 여백 추가 */
+            margin: 15px;                   /* 바깥쪽 여백 추가 */
+            display: inline-block;          /* 블록 요소인 div를 인라인 요소로 변경 */
+            line-height: 2;                 /* 글자간 세로 간격을 글자 크기의 2배로 설정 */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+            중첩 for문을 사용해서 1단부터 9단까지
+            HTML + CSS 형식으로 화면에 출력
+        */
+
+        let i, j;
+
+        // 바깥쪽 for문 -> 1부터 9까지
+        for(i = 1; i <= 9; i++){
+            // 각 단마다 CSS가 적용된 div 박스 생성
+            document.write("<div>");
+
+            // 현재 단 제목 생성
+            document.write(`<h3>${i} 단</h3>`);
+
+            // 안쪽 for문 -> 1부터 9까지
+            for(j = 1; j <= 9; j++){
+                // i * j를 통해 구구단 값 출력
+                document.write(`${i} x ${j} = ${i * j}<br>`);
+            } // j가 9보다 커지면 종료
+
+            // div 박스 끝
+            document.write("</div>");
+        }
+
+
+    </script>
+</body>
+</html>
