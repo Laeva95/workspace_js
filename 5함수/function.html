@@ -38,6 +38,53 @@
         console.log(add(3, 5));
 
 
+        // 문제2. 매개 변수로 2개의 인수를 전달받아서 두 값 중에서 큰 값 하나를
+        //         반환하는 선언문 형식의 함수 작성
+        function max(a, b){
+            return a >= b ? a : b;
+        }
+
+        console.log(max(7, 10));
+
+        // 문제3. 매개변수로 1개의 인수를 전달받아서 양수면 true
+        //         음수면 false를 반환하는 함수
+        function isPositive(a){
+            // 0보다 크거나 같다면 true, 작다면 false
+            return a > 0;
+        }
+
+        console.log(isPositive(5));         // 5 > 0 == true
+        console.log(isPositive(-2));        // -2 > 0 == false
+
+
+        // 문제4. 매개변수로 1개의 인수를 전달받아서
+        //          짝수면 true 홀수면 false를 반환하는 함수
+        function isEven(a){
+            return a % 2 === 0;
+        }
+
+        console.log(isEven(4));             // 4 % 2 == 0
+        console.log(isEven(7));             // 7 % 2 == 1
+
+        
+        // 문제5. 숫자 1부터 매개변수 n으로 전달받은 인수 하나의
+        //  합을 구하는 기능의 sumUpTo 라는 이름의 함수를 정의
+        function sumUpto(n){
+            // 값을 더해서 저장할 변수 선언
+            let count = 0;
+
+            // 1부터 n까지 반복
+            for(let i = 1; i <= n; i++){
+                // 1부터 n까지 더해서 저장
+                count += i;
+            }
+
+            return count;
+        }
+
+        console.log(sumUpto(5));            // 15
+
+
     </script>
 </body>
 </html>

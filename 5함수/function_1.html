@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            함수를 정의하는 방법
+                방법 1. 함수 선언문 function
+                    function 함수명(매개변수1, 매개변수2){
+
+                        코드 내용;
+
+                        return 반환값;
+                    }
+                    함수명(인수1, 인수2);
+
+                방법 2. 함수 표현식 const 상수명 = function
+                    const 상수명 = function(매개변수1, 매개변수2){
+                        
+                        코드 내용;
+
+                        return 반환값;
+                    };
+                    상수명(인수1, 인수2);
+
+                방법 3. 화살표 => 함수 정의
+                    const 상수명 = (매개변수1, 매개변수2) => {
+
+                        코드 내용;
+
+                        return 반환값;
+                    };
+                    상수명(인수1, 인수2);
+        */
+
+        /*
+            함수를 정의하는 방법
+                방법 1. 함수 선언문 function
+        */
+
+        // 매개변수로 전달받은 두개의 값을 곱해서 반환
+       function multiply(a, b){
+            console.log(`a: ${a} b: ${b}`);
+            return a * b;
+       }
+        /*
+            multiply(5, 10); 호출시 a 매개변수에는 5를 전달하고 b는 10을 전달
+                         a: 5 b: 10
+                         return a * b = 50
+       */
+       console.log(multiply(5, 10));
+
+       /*
+            multiply(7); 호출시 a 매개변수에만 7을 전달하고 b는 undefined
+                         a: 7 b: undefined
+                         return a * b = NaN
+       */
+       console.log(multiply(7));
+
+       /*
+            multiply(); 호출시 a와 b 매개변수는 모두 undefined가 되어
+                        console.log(`a: ${a} b: ${b}`); 결과는
+                        a: undefined b: undefined
+                        return a * b = NaN
+       */
+       console.log(multiply());
+
+       // ----------------------------------------------------------------------------------
+
+       // 화살표 함수
+       // 매개변수 기본값을 설정 가능
+       const add = (x = 5, y = 5) => { 
+            console.log(`x: ${x} y: ${y}`);
+            return x + y;
+        };
+
+        // console.log(add(3, 7));          3 + 7 = 10
+        // console.log(add(3));             3 + 5 = 8
+        // console.log(add());              5 + 5 = 10   
+
+    </script>
+</body>
+</html>
