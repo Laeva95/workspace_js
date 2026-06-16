@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 전역 스코프
+        let a = 10;
+        const b = 20;
+
+
+        function sum(){
+            // 지역 스코프
+            let a = 50;
+            const b = 70;
+
+            console.log(`함수 내부 a: ${a}`);
+            console.log(`함수 내부 b: ${b}`);
+        }
+        sum();
+
+        console.log(`함수 외부 a: ${a}`);
+        console.log(`함수 외부 b: ${b}`);
+
+        /*
+            다른 스코프에서는 같은 이름의 변수를 선언할 수 있음
+            만약 같은 이름의 변수가 둘 이상 존재할 경우
+            가까운 스코프에 있는 변수를 우선 사용함
+
+            안쪽 스코프에서 바깥쪽 스코프로 찾아가면서 가장 가까운 변수를
+            우선해서 사용함
+            바깥쪽 스코프에서 안쪽 스코프에는 접근 불가능
+        */
+
+
+    </script>
+</body>
+</html>

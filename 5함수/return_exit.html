@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            sum 함수 선언
+            기능: 두 개의 인수를 전달받아서 전달받은 인수의 자료형이
+                숫자의 형태이면 두 인수를 더한 결과값을 반환하고,
+                숫자가 아닐경우 함수를 즉시 종료
+        */
+        const sum = (num1, num2) => {
+            if(typeof num1 !== "number" || typeof num2 !== "number"){
+                return
+            }
+            return num1 + num2;
+        };
+
+       // 1, 11로 sum 함수 호출
+       // 숫자이기 때문에 더한 값 반환
+       let result2 = sum(1, 11);
+
+       console.log(result2);
+
+       // "a", "b"로 sum 함수 호출
+       // 문자열이기 때문에 즉시 종료
+       let result = sum("a", "b");
+
+       console.log(result);         // sum이 return으로 즉시 종료되어 undefined 상태 유지
+
+
+       console.log("---------------------------------------------------------");
+
+
+       // 화살표 함수로 동일한 기능의 sum2함수 생성
+
+       const sum2 = (num1, num2) => {
+            if(typeof num1 !== "number" || typeof num2 !== "number"){
+                return;
+            }
+            return num1 + num2;
+       };
+
+       let result3 = sum2(2, 10);
+
+       console.log(result3);
+
+       
+       const sum3 = (num1, num2) => num1 + num2;
+
+       let result4 = sum3(10, 20);
+
+       console.log(result4);
+
+    </script>
+</body>
+</html>

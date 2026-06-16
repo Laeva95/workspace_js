@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            즉시 실행 함수
+                - 함수를 선언하는 동시에 호출해서 실행하는 함수
+            
+            작성 방법
+                - (function(){ 함수 내용; })();
+                - (function 함수명(){ 함수 내용; })함수명();
+        */
+
+        /*
+            일반적으로 함수를 선언하면 전역 스코프 영역에 정의됨
+
+            전역 스코프에 정의된 함수는 프로그램이 종료될 때까지
+            메모리에서 사라지지 않음
+        */
+
+        (function init(){ console.log("initialized"); })();
+
+        init();                 // 즉시 실행 함수는 재호출 불가능
+
+    </script>
+</body>
+</html>
