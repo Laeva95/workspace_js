@@ -23,9 +23,10 @@
             메모리에서 사라지지 않음
         */
 
-        (function init(){ console.log("initialized"); })();
+        (function init(){ console.log("initialized"); })();         // 기본 즉시 실행 함수
+        (function(){ console.log("initialized"); })();              // 익명 즉시 실행 함수
 
-        init();                 // 즉시 실행 함수는 재호출 불가능
+        // init();                 // 즉시 실행 함수는 재호출 불가능
 
     </script>
 </body>

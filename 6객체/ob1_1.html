@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            객체 리터럴 생성 방법
+            let obj = {
+                property: value,
+                method: function(){
+                    
+                }
+            };
+
+            obj.property;           <----- 점 표기법으로 접근
+            obj.property = a;       <----- 속성의 값 변경
+            obj.property2 = a;      <----- 새 속성 값 추가
+            obj.method();           <----- 메소드 호출
+
+            obj["property"];        <----- 대괄호 표기법으로 접근
+            obj["property"] = a;    <----- 속성의 값 변경
+            obj["property2"] = a;   <----- 새 속성 값 추가
+            obj["method"]();        <----- 메소드 호출
+            
+        */
+
+        // 소나타 자동차 객체 만들기
+        let sonata = {
+            color: "빨강",
+            model: "소나타",
+            type: "가솔린",
+            go: function(){ 
+                console.log("소나타 주행 시작."); 
+            },
+            stop: function(){ 
+                console.log("소나타 정지.") 
+            }
+        };
+
+        // 소나타 객체 속성에 접근
+        document.write(sonata.color, "<br>");
+
+        document.write(sonata.model, "<br>");
+
+        document.write(sonata.type, "<br>");
+
+        // 소나타 객체 메소드 호출
+        sonata.go();
+
+        sonata.stop();
+
+        
+
+
+    </script>
+</body>
+</html>

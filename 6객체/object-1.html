@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1. 사용자 정의 객체 만들기
+
+            리터럴 이용 생성
+        */
+
+        let book1 = {
+            title: "웹 표준의 정석",            // 문자열은 따옴표를 사용
+            pages: 648,                       // 숫자는 따옴표 없이
+        };
+
+        /*
+            객체에 속성 값을 얻거나 변경
+        */
+
+        console.log(book1.title);
+        console.log(book1.pages);
+
+        book1.title = "웹 표준의 정석2";
+
+        console.log(JSON.stringify(book1)); // 객체를 문자열로 변환해서 출력
+
+        console.log(book1["title"]);
+        console.log(book1["pages"]);
+
+        book1["title"] = "웹 표준의 정석";
+
+        console.log(JSON.stringify(book1));
+
+        
+        /*
+            속성이 없는 비어있는 객체 생성 후
+            이후에 속성 추가
+        */
+
+        let book2 = {};
+
+        book2.title = "Javascript";
+
+        book2.pages = 500;
+
+        book2.author = "김개똥";
+
+        console.log(JSON.stringify(book2));     // {title: "Javascript", pages: 500, author: "김개똥"}
+
+        /*
+            객체 내부에 만들어져있는 속성 삭제
+            delete 객체명.속성명;
+        */
+
+        // book2의 pages 삭제
+        delete book2.pages;
+
+        console.log(JSON.stringify(book2));     // {title: "Javascript", author: "김개똥"}
+
+        // book2의 author 삭제
+        delete book2.author;
+
+        console.log(JSON.stringify(book2));     // {title: "Javascript"}
+
+
+        /*
+            객체 중첩
+            객체 내부에서 객체를 속성값으로 가질 수 있음
+
+            let 객체명 = {
+                속성1: 값1,
+                속성2: 값2,
+                속성3: {
+                    속성3-1: 값3-1,
+                    속성3-2: 값3-2
+                }
+            };
+        */
+       
+        let student = {
+            name: "Doremi",
+            score: {
+                history: 85,
+                science: 94,
+                average: function(){ 
+                    return (this.history + this.science) / 2; 
+                }
+            }
+        };
+
+        console.log(student.score.history);             // 85
+        console.log(student["score"]["science"]);       // 94
+
+        console.log(student.score.average());           // 89.5
+        console.log(student["score"]["average"]());     // 89.5
+
+    </script>
+</body>
+</html>

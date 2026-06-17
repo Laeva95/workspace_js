@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1. 객체
+            객체는 여러 값을 하나의 참조 값으로 관리하는 참조형 데이터
+            객체 내부에는 속성, 메소드로 구성됨
+
+            1.1 속성
+            객체 안에 저장된 값
+            속성명: 값 (key: value)
+            
+            1.2 메소드
+            객체 안에 속성값으로 저장된 함수
+            function 함수명(){}
+
+            1.3 객체 종류
+            - 사용자 정의 객체: 개발자가 직접 생성
+            - 자바 스크립트 문법에서 제공하는 객체
+
+                1.3.1 사용자 정의 객체 생성 방법
+                    let obj = new Object();         <----- 예전 버전에서 생성하던 방식
+                    obj.property = value;           <----- 객체 속성 값 추가
+                    obj.method = function() {};     <----- 객체 메소드 추가
+
+                1.3.2 객체 리터럴 생성 방법
+                    let obj = {
+                        property: value,
+                        method: function(){
+                            
+                        }
+                    };
+
+                1.3.3 객체 내부 접근 방법
+                    obj.property;           <----- 점 표기법으로 접근
+                    obj.property = a;       <----- 속성의 값 변경
+                    obj.property2 = a;      <----- 새 속성 값 추가
+                    obj.method();           <----- 메소드 호출
+
+                    obj["property"];        <----- 대괄호 표기법으로 접근
+                    obj["property"] = a;    <----- 속성의 값 변경
+                    obj["property2"] = a;   <----- 새 속성 값 추가
+                    obj["method"]();        <----- 메소드 호출
+        */
+
+
+        /*
+            new 키워드와 Object(); 생성 함수를 통해 사용자 정의 객체 생성
+
+            객체: 현실에 존재하는 자신만의 값 + 기능을 가진 모든 사물이나 사람 등을 모두 객체라고 함
+
+            객체 모델링: 현실에 존재하는 객체의 값이나 기능을 추출해서 설계하는 작업
+        */
+
+        // lgTv 객체 생성
+        let lgTv = new Object();
+
+        // lgTv 객체에 속성 값 추가
+        lgTv.width = "30cm";
+        lgTv.height = "25cm";
+        lgTv.weight = "20kg";
+        lgTv.color = "white";
+
+        // lgTv 객체에 메소드 추가
+        lgTv.off = function(){ 
+            document.write("전원을 끕니다.<br>"); 
+        };
+        lgTv.on = function(){
+            document.write("전원을 켭니다.<br>");
+        };
+
+        // -------------------------------------------------------------------
+
+        // lgTv 객체의 속성 값, 메소드 가져오기
+        document.write(lgTv.width);
+
+        document.write("<br>");
+
+        document.write(lgTv.height);
+
+        document.write("<br>");
+
+        document.write(lgTv.weight);
+
+        document.write("<br>");        
+        
+        document.write(lgTv.color);
+
+        document.write("<br>");
+
+        lgTv.on();
+
+        lgTv.off();
+
+
+    </script>
+</body>
+</html>
