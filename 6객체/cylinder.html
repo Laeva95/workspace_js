@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cylinder.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="userInput">
+            <ul>
+                <li>
+                    <label for="radius">반지름</label>
+                    <Input type="text" id="radius" value="5"></Input>
+                </li>
+                <li>
+                    <label for="height">높이</label>
+                    <Input type="text" id="height" value="10"></Input>
+                </li>
+                <li>
+                    <!-- 
+                        사이트 이용자가 <button>을 클릭하는 동작을 등록
+                        ->  onclick
+                        클릭하는 동작 등록 후 기능을 실행하기 위한 함수 호출
+                        ->  ="함수명()";
+                    -->
+                    <button onclick="calcByConstructor();">생성자</button>
+                </li>
+                <li>
+                    <button onclick="calcByClass();">클래스</button>
+                </li>
+            </ul>
+        </div>
+        <div id="result">
+            결과 출력 영역
+        </div>
+    </div>
+    <script>
+        // 입력창에서 값을 가져오는 함수
+        function getInputValues(){
+            // <Input type="text" id="radius" value="5"></Input> 반지름 입력 값 가져오기
+            let radius = Number(document.querySelector("#radius").value);
+
+            // <Input type="text" id="height" value="10"></Input> 높이 입력 값 가져오기
+            let height = Number(document.querySelector("#height").value);
+        }
+        // 원기둥의 부피를 계산하는 함수
+        function calcByConstructor(){
+            getInputValues();
+        }
+        function calcByClass(){
+
+        }
+
+        /*
+            원기둥 높이 = 반지름 * 반지름 * PI * 높이
+        */
+        // 생성자 함수
+        function CylinderConstructor(radius, height){
+            // 속성
+            this.radius = radius;
+            this.height = height;
+
+            // 메소드
+            this.getVolume = function(){
+                // 원기둥 높이 = 반지름 * 반지름 * PI * 높이
+                return this.radius * this.radius * Math.PI * this.height;
+            };
+        }
+
+        
+
+    </script>
+</body>
+</html>

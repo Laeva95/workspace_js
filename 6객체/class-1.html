@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            class
+            객체를 생성할 때 규칙을 좀 더 명확하게 작성하는 설계도
+            내부에 생성자 함수를 포함해서 작성할 수 있음
+
+            class 클래스명{
+                constructor(매개변수1, 매개변수2){
+                    this.속성1 = 매개변수1;
+                    this.속성2 = 매개변수2;
+                }
+                함수명1(){
+                    함수 내용;
+                }
+            }
+
+            let 객체변수 = new 클래스명(인수1, 인수2);
+        */
+
+        /*
+            class 설계도를 작성해서 객체 만들기
+        */
+        class Product{
+            // 생성자
+            constructor(name, price){
+                this.name = name;
+                this.price = price;
+            }
+
+            // 상품 정보 출력 메소드
+            printInfo(){
+                document.write(`제품명: ${this.name}<br>가  격:${this.price}<br>`);
+                document.write("<hr>");
+            }
+        }
+
+        // 객체 생성
+        let product1 = new Product("키보드", 30000);
+        let product2 = new Product("마우스", 15000);
+
+        // 메소드 호출
+        product1.printInfo();
+        product2.printInfo();
+
+
+
+    </script>
+</body>
+</html>

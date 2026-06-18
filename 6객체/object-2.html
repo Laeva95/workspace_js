@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            객체 메모리의 주소를 다른 참조 변수에 대입하면
+            같은 객체 메모리에 접근함.
+            다른 참조 변수로 값을 변경하면 기존 변수의 값도
+            함께 변경됨.
+
+            let num1 = { 속성명: 값 };
+            
+            let num2 = num1;
+        */
+
+        /*
+            객체 메모리 내부에 메소드 만들기
+        */
+       let book3 = {
+            title: "점프투 파이썬",
+            pages: 360,
+
+            buy: function(){
+                console.log("이 책을 구입했습니다.");
+            }
+       };
+
+       console.log(book3);
+
+       /*
+            만들어 놓은 객체 메모리의 메소드 호출
+       */
+      book3.buy();
+
+      /*
+            객체 메모리의 메소드를 호출해서 사용할 때 this 예약어
+      */
+
+      let book4 = {
+        title: "Java Script",
+        pages: 500,
+        author: "김말똥",
+        done: false,
+
+        finish: function() {
+            this.done === false ? console.log("읽는중") : console.log("완독");
+        }
+      };
+
+      book4.finish();
+
+
+      /*
+            객체 메모리의 주소번지 복사
+            1. 원시 유형의 값
+            2. 참조 유형의 값
+      */
+
+      /*
+            원시 타입의 복사는 값이 직접 복사됨
+            복사한 값을 바꿔도 원본 값은 그대로
+      */
+
+      let number1 = 100;
+      let number2 = number1;
+
+      console.log(number1);
+      console.log(number2);
+
+      number2 = 200;
+
+      console.log(number1);
+      console.log(number2);
+
+      /*
+            참조 타입의 복사는 값이 존재하는 메모리의 주소가 복사됨
+            복사한 값을 바꾸면 원본 값도 바뀜
+      */
+
+      let bag1 = {
+        color:"blue",
+        width: 30,
+        height: 50
+      };
+      let bag2 = bag1;
+
+      console.log(JSON.stringify(bag1));
+      console.log(JSON.stringify(bag2));
+
+      bag2.color = "red";
+
+      console.log(JSON.stringify(bag1));
+      console.log(JSON.stringify(bag2));
+
+
+    </script>
+</body>
+</html>
