@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            0.0 <= Math.random() < 1.0
+
+            원하는 구간에서 무작위 정수 하나를 가져오기
+
+            Math.floor(Math.random() * (최대값 - 최소값 + 1)) + 최소값
+        */
+
+        const getRandomInt = function(minNum, maxNum){
+            return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+        };
+
+        let min = 120;
+        let max = 150;
+
+        // 120 ~ 150 사이의 값 저장
+        let ran = getRandomInt(min, max);
+        // 저장한 값 출력
+        document.write(ran);
+
+    </script>
+</body>
+</html>
