@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<h1>컴퓨터가 랜덤으로 내는 가위, 바위, 보 중 하나를 맞추는 게임</h1>");
+
+        let t = prompt("가위, 바위, 보 중에서 하나를 입력하세요.", "가위");
+        let tNum;
+
+        switch (t) {    // 알맞은 답을 입력했을 경우 tNum에 값 입력
+            case "가위":
+            tNum = 1;
+                break;
+            case "바위":
+            tNum = 2;
+                break;
+            case "보":
+            tNum = 3;
+                break;        
+            default:    // 잘못된 답을 입력했을 경우 사이트 재요청
+                alert("잘못된 답을 입력했습니다.");
+                location.reload();
+                break;
+        }
+
+        
+        
+
+
+    </script>
+</body>
+</html>

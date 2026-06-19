@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            날짜 간격 계산하기
+
+            Date 객체에서 제공하는 getTime()메소드는 1970년 1월 1일 12:00 이후의 시간에서 현재 날짜 사이의 간격을 반환함
+        */
+        const date = new Date().getTime();
+
+        console.log(date);
+
+        // 두 날짜 사이의 간격 구하기
+        const date1 = new Date('2022-12-13');     // 특정 날짜 저장
+
+        const date2 = new Date('2022-12-25');     // 특정 날짜 저장
+
+        // 두 날짜에 getTime() 메소드를 통해 반환받은 값을 빼서 구할 수 있음
+        const dateDiff = date2.getTime() - date1.getTime();
+
+        const interVal = dateDiff / (24 * 60 * 60 * 1000);
+
+        console.log(`두 날짜의 간격은 ${interVal}일 입니다.`);
+
+
+
+
+    </script>
+</body>
+</html>

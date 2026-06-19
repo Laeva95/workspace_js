@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1. 내장 객체
+            Date: 날짜와 시간 정보를 처리할 때 사용하는 내장 객체
+            String: 문자열을 조작하거나 문자열을 관리하는 객체
+            Array: 배열 메모리를 생성해서 값을 관리하는 객체
+            Math: 수학 연산 관련 메소드들을 제공하는 객체
+
+            2. 브라우저 객체
+            Window: 웹브라우저 창 하나의 전체 정보를 갖고 관리하는 객체
+            Screen: 모니터 정보를 제공받고 관리하는 객체
+            location: 웹브라우저 주소창 관련 정보를 갖고 있는 객체
+            history: 웹브라우저로 요청했던 페이지들의 정보를 갖는 객체
+            .....
+
+            3. 문서 객체
+            .html에 작성된 모든 HTML 태그들을 브라우저가 해석해서 변환한 후 제공하는 객체
+        */
+
+        /*
+            Date
+            날짜와 시간 정보를 관리하고 처리할 때 사용되는 메소드들을 제공하는 내장 객체
+            let 변수명 = new Date();
+
+                - **getFullYear()**: 연도
+                - **getMonth()**: 월
+                - **getDate()**: 일
+                - **getDay()**: 요일 번호(일요일: 0 ~ 토요일: 6)
+                - **getHours()**: 시
+                - **getMinutes()**: 분
+                - **getSeconds()**: 초
+        */
+
+        let today = new Date();
+
+        let nowMonth = today.getMonth() + 1;    // 현재 몇월인지 0부터 11까지의 값으로 반환
+
+        let nowDate = today.getDate();          // 현재 며칠인지 반환
+
+        let nowDay = today.getDay();            // 현재 무슨 요일인지 반환. 일요일: 0 ~ 토요일: 6
+
+        document.write(`현재 ${nowMonth}월 ${nowDate}일 `);
+        switch (nowDay) {
+            case 0:
+                document.write("일요일");
+                break;
+            case 1:
+                document.write("월요일");
+                break;
+            case 2:
+                document.write("화요일");
+                break;
+            case 3:
+                document.write("수요일");
+                break;
+            case 4:
+                document.write("목요일");
+                break;
+            case 5:
+                document.write("금요일");
+                break;
+            case 6:
+                document.write("토요일");
+                break;
+            default:
+                break;
+        }
+        document.write("<br>");
+
+
+
+
+
+    </script>
+</body>
+</html>

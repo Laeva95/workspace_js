@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Number 객체
+            숫자를 보관해서 표기법을 변경하는 메소드를 제공하는 객체
+
+            숫자를 변수에 저장시키면 자동 생성
+
+
+        */
+
+        let num1 = 3.456789;
+
+        let num3 = "30.5px";
+
+        let num4 = 40;
+
+        // 소수점 자리수 제한
+        document.write(num1.toFixed(2), "<br>");
+        // 문자열로 변환
+        document.write(num1.toString(), "<br>");
+        
+        document.write(num4, "<br>");
+        // 소수점 자리수가 있는 실수로 변환
+        document.write(parseFloat(num3) + num4, "<br>");
+        // 정수로 변환
+        document.write(parseInt(num3) ,"<br>");
+
+        document.write(parseInt(num3) + num4 ,"<br>");
+
+
+
+    </script>
+</body>
+</html>
