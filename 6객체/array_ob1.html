@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            변수 메모리
+                 하나의 데이터를 저장할 전체 메모리 공간
+                let 변수명;
+
+            배열 객체 메모리
+                 하나의 메모리에 칸을 나누어서 하나 이상의 데이터를 함께 저장시킬 전체 메모리 공간
+                 배열의 각 칸의 데이터에 접근하거나 저장된 데이터를 불러오거나 각 칸에 저장된
+                데이터를 변경하기 위해서 인덱스를 통해 접근함
+                 배열 메모리의 각 칸에 저장된 데이터를 요소라고 함
+                 자바스크립트의 배열 메모리는 동적 배열로 크기가 자동으로 조절됨
+                 또한 다양한 내장 메소드들이 기본적으로 제공됨(length, push(), pop(), shift(), unshift()... ...)
+
+                 -------------------------------------------------------------------------------------------
+
+            배열 메모리 선언 방법
+                1. 리터럴 표기법 [1, 2, 3]
+
+                    let 변수명 = [1, 2, 3];
+
+                2. Array 생성자 new Array(1, 2, 3)
+
+                    let 변수명 = new Array(1, 2, 3);
+                    
+                    만약 하나의 숫자 인자를 전달하면 해당 크기의 비어있는 배열이 생성됨.
+
+                ---------------------------------------------------------------------------------------------
+
+            생성된 배열 메모리의 각 index 위치 번호의 칸에 저장된 요소를 불러와 사용하는 방법
+                1. 변수명[index];
+        */
+
+        let arr = [10, 20, 30];
+
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+
+        console.log("==================================================================<br>");
+
+
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+        for(let i = 1; i <= arr.length; i++){
+            console.log(arr[arr.length - i]);
+        }
+
+
+        /*
+            배열 메모리에 저장된 원본 데이터를 변경시키는 메소드들을 파괴적 메소드들이라 부른다.
+
+                파괴적 메소드 종류
+                    1. push(): 배열 객체 메모리의 가장 뒷칸에 새로운 데이터를 동적으로 추가
+                    arr.push(값);
+                    2. pop(): 배열 객체 메모리의 가장 뒷칸에 저장된 데이터만 추출
+                    arr.pop();
+                    3. unshift(): 배열 객체 메모리의 가장 앞칸에 새로운 데이터를 동적으로추가
+                    arr.unshift(값);
+                    4. shift(): 배열 객체 메모리의 가장 앞칸에 저장된 데이터만 추출
+                    arr.shift();
+        */
+
+        const arr2 = [10, 20, 30, 40];
+
+        arr2.push(50);                      // 배열 마지막에 50 추가
+        console.log(arr2);                  // arr2 = [10, 20, 30, 40, 50]
+
+        let number = arr2.pop();            // 배열에서 마지막 데이터를 추출
+        console.log(number);                // 50
+
+        arr2.unshift(0);                    // 배열 처음에 0 추가
+        console.log(arr2)                   // arr2 = [0, 10, 20, 30, 40]
+
+        let result = arr2.shift();          // 배열에서 첫 데이터를 추출
+        console.log(result);                // 0
+
+
+        // ----------------------------------------------------------------------------
+
+        /*
+            forEach() 메소드
+                배열 객체 메모리에 저장된 전제 요소의 개수만큼 반복해서 실행하는 메소드
+                매 요소마다 콜백함수function을 자동으로 호출하여 사용하는 메소드
+                반환값이 없고, 중간에 반복을 멈출 수 없다는 특징이 있음
+
+                arr.forEach(function(현재 인덱스의 배열 값(필수), 현재 인덱스(선택), 원본 배열(선택)){
+                    실행내용;
+                });
+        */
+
+        const arr3 = [10, 20, 30, 40];
+
+        arr3.forEach(function(num, i, arr3){
+            console.log(`${arr3.length}개 중 ${i + 1}번째 숫자: ${num}`);
+        });
+
+
+        //  ---------------------------------------------------------------------------------
+
+        /*
+            forEach를 사용해서 배열 복제
+        */
+       const numbers = [1, 2, 3];
+       const copy = [];
+
+       numbers.forEach(function(num){
+            copy.push(num);
+       });
+
+       console.log(copy);
+
+
+       // --------------------------------------------------------------------------------------
+
+
+       const fruits = ["apple", "banana", "cherry"];
+
+       fruits.forEach(function(fruit, i){
+            console.log(`${i} index 위치 칸에 저장된 데이터: ${fruit}`);
+       });
+
+
+       // -------------------------------------------------------------------------------------
+
+
+       // this: 중괄호로 생성된 객체 메모리 주소번지를 기억하고 있는 예약어
+       const obj = {
+            multiplier: 2,
+            multiply: function(array){
+                array.forEach(function(num){ 
+                    console.log(num * this.multiplier) 
+                }, this);
+            }
+       };
+
+       obj.multiply([1,2,3]);
+
+
+    </script>
+</body>
+</html>

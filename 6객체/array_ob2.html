@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fruits 배열 생성
+        const fruits = ["Apple", "Banana", "Cherry"];
+
+        // fruits 첫번째 요소 출력
+        console.log(fruits[0]);                     // "Apple"
+
+        // fruits 배열 길이 출력
+        console.log(fruits.length);                 // 3
+
+        // fruits 배열 메모리 마지막 칸에 "Date" 요소 추가
+        fruits.push("Date");
+        
+        // fruits 배열 전체 출력
+        console.log(JSON.stringify(fruits));        // ["Apple", "Banana", "Cherry", "Date"]
+
+        // fruits 배열 메모리 마지막 칸에 저장된 "Date" 요소 추출 후 변수에 저장
+        let value2 = fruits.pop();
+
+        // 저장한 변수 값 출력
+        console.log(value2);                        // "Date"
+
+        // 다시 fruits 배열 출력
+        console.log(JSON.stringify(fruits));        // ["Apple", "Banana", "Cherry"]
+
+        // fruits 배열 메모리 첫번째 칸에 저장된 "Apple" 요소 추출 후 변수에 저장
+        let newData = fruits.shift();
+
+        // 저장한 변수 값 출력
+        console.log(newData);                       // "Apple"
+
+        // fruits 전체 배열 출력
+        console.log(JSON.stringify(fruits));        // ["Banana", "Cherry"]
+
+        // fruits 첫번째 칸에 "Avodcado" 추가
+        fruits.unshift("Avodcado");
+
+        // fruits 전체 배열 출력
+        console.log(JSON.stringify(fruits));        //["Avodcado", "Banana", "Cherry"]
+
+        // fruits 배열 요소를 하나씩 출력(function(){})
+        fruits.forEach(function(item){
+            console.log(item);
+        });
+
+        // fruits 배열 요소를 하나씩 출력(화살표 함수 선언)
+        fruits.forEach(item => console.log(item));
+
+        // map() 메소드를 통해 대문자로 이루어진 배열 반환
+        let upperFruits = fruits.map(function(item){
+
+            return item.toUpperCase();              // 값을 반환하는 순서대로 받아서 배열에 생성됨
+        });
+
+        console.log(JSON.stringify(upperFruits));   // ["AVODCADO", "BANANA", "CHERRY"]
+
+        // 화살표 함수를 통해 map() 메소드 호출
+        let upperFruits2 = fruits.map(item => item.toUpperCase());
+
+        console.log(JSON.stringify(upperFruits2));   // ["AVODCADO", "BANANA", "CHERRY"]
+
+
+        // --------------------------------------------------------------------------------------
+
+        let numbers = [1, 2, 3, 4, 5];
+
+        let numbers2 = numbers.map( item => item * item);
+
+        console.log(JSON.stringify(numbers2));
+
+
+    </script>
+</body>
+</html>

@@ -121,7 +121,9 @@
     <script>
         // 로또 번호 6개를 생성하는 함수
         function generateLottoNumbers(){
-            let array = new Array(0, 0, 0, 0, 0, 0);
+            // 번호를 저장하기 위한 배열 생성
+            let array = [0, 0, 0, 0, 0, 0];
+            // 현재 몇번째 번호인지 세기 위한 변수 생성
             let count = 0;
 
             // 배열에 값이 6개가 될 때까지 실행
@@ -139,7 +141,7 @@
             }
             
             // 배열을 오름차순으로 정렬
-            sort(array);
+            array.sort();
 
             // 추첨한 로또 번호 결과를 표시할 요소를 id를 통해 가져옴
             const resultElement = document.getElementById('lottoResult');
@@ -178,25 +180,25 @@
             // 중복 값이 없다면 false 반환
             return false;
         }
-        // 배열의 값을 오름차순으로 정렬하는 함수
-        function sort(arr) {
-            // 배열의 길이 저장
-            const len = arr.length;
+        // // 배열의 값을 오름차순으로 정렬하는 함수
+        // function sort(arr) {
+        //     // 배열의 길이 저장
+        //     const len = arr.length;
             
-            // 배열의 처음부터 끝까지 반복
-            for (let i = 0; i < len - 1; i++) {
-                // 마지막 i개 요소는 이미 정렬되었으므로 len - 1 - i 까지만 비교
-                for (let j = 0; j < len - 1 - i; j++) {
-                    // 앞의 숫자가 뒤의 숫자보다 크면 위치를 변경 (오름차순)
-                    if (arr[j] > arr[j + 1]) {
-                        let temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                    }
-                }
-            }
-            return arr;
-        }
+        //     // 배열의 처음부터 끝까지 반복
+        //     for (let i = 0; i < len - 1; i++) {
+        //         // 마지막 i개 요소는 이미 정렬되었으므로 len - 1 - i 까지만 비교
+        //         for (let j = 0; j < len - 1 - i; j++) {
+        //             // 앞의 숫자가 뒤의 숫자보다 크면 위치를 변경 (오름차순)
+        //             if (arr[j] > arr[j + 1]) {
+        //                 let temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1] = temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
 
     </script>
 
