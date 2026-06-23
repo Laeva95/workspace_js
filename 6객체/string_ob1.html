@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            String 객체 메모리
+                 특정 문자열을 저장해놓고, 문자열에서 특정 문자열을 변경하거나 
+                잘라내는 등 문자열을 관리하는 메서드를 제공하는 객체
+               
+            생성방법
+                '', ""으로 감싸서 작성
+                new String('')으로 작성
+
+            속성 및 메서드
+                1. charAt(index): 전체 저장된 문자열에서 특정 문자의 index 위치의 문자를 반환
+        */
+
+        let str = "web he she";
+
+        console.log(str.charAt(2));
+
+        /*
+                2. indexOf(string): 전체 문자열에서 매개변수로 전달받은 문자와 일치하는 첫번째 index 위치를 반환
+        */
+
+        document.write(str.indexOf("he"), "<br>");
+
+        /*
+                3. lastIndexOf(string): 전체 문자열에서 매개변수로 전달받은 문자와 일치하는 마지막 index 위치 반환
+        */
+
+        let str2 = "web he she he";
+
+        document.write(str2.lastIndexOf("he"), "<br>");
+
+        /*
+                4. match(string): 매개변수로 전달받은 문자열과 일치하는 문자열을 찾아서 가장 먼저 찾은 문자열이 있다면 해당 문자열 자체를 반환
+                    찾을 문자열이 전체 문자열 중에 없으면 null 반환
+        */
+
+        let str3 = "web he she he";
+
+        document.write(str3.match("boy"), "<br>");  // null
+        document.write(str3.match("he"), "<br>");   // he
+
+        /*
+                5. replace(a, b): 전체 문자열에서 a를 b로 치환해서 반환하는 메서드
+                            왼쪽에서 오른쪽으로 탐색하며 가장 먼저 발견한 문자열을 변경시킴
+        */
+
+        let str4 = "web he she";
+
+        let str5 = str4.replace("web", "html");
+
+        document.write(str5, "<br>");
+
+        /*
+                6. search(string): 전체 문자열에서 매개변수로 전달받은 문자열과 일치하는 문자열을 찾아서
+                                    가장 먼저 일치하는 문자열 시작문자의 index 위치를 반환하는 메서드
+        */
+
+        let str6 = "web he she";
+
+        document.write(str6.search("he"), "<br>");
+
+        /*
+                7. slice(a, b): 전체 문자열에서 index a부터 b 직전까지의 문자열을 반환
+        */
+
+        let str7 = "hello javascript";
+
+        document.write(str7.slice(3, 7), "<br>");
+
+        /*
+                8. substring(a, b): 전체 문자열에서 index a부터 index b 직전까지의 문자열을 반환
+                                    slice()와 비슷하지만 다른점 1. 음수값이 들어가면 0으로 자동 변환됨
+                                                             2. a, b중 더 작은 값이 문자열을 자를 시작위치, 큰 값이 끝위치로 자동 변환
+        */
+
+        let str8 = "hello javascript";
+
+        document.write(str8.substring(3, -3), "<br>");
+
+        document.write(str8.substring(3, 7), "<br>");
+
+        /*
+                9. substr(a, b): 전체 문자열에서 index a부터 b개 만큼의 문자열을 추출해서 반환
+        */
+
+        let str9 = "hello javascript";
+
+        document.write(str9.substr(3, 2), "<br>");
+
+        /*
+                10. split(a): 자를 기준이 되는 문자를 매개변수로 받고, 전체 문자열을 해당 문자를 기준으로 잘라내서 문자열 배열로 반환
+        */
+
+        let str10 = "web mobile 2026";
+        str10.split(" ").forEach(str => document.write(str, "<br>"));
+
+        /*
+                11. toLowerCase(): 전체 문자열을 소문자로 변경하는 메서드
+        */
+
+        document.write("ABC".toLowerCase(), "<br>");
+
+        /*
+                12. toUpperCase(): 전체 문자열을 대문자로 변경하는 메서드
+        */
+
+        document.write("abc".toUpperCase(), "<br>");
+
+        /*
+                13. length: 문자열의 길이를 나타내는 속성
+        */
+
+        document.write("hello welcome".length, "<br>");
+
+        /*
+                14. concat(): 전체 문자열에 매개변수로 전달받은 문자열을 연결해서 이어붙인 하나의 문자열을 반환하는 메서드
+        */
+       
+        document.write("hello".concat("web"), "<br>");
+
+
+        /*
+                15. charCodeAt(index): 전체 문자열에서 매개변수로 전달한 index 위치의 문자의 아스키 코드값을 반환하는 메소드
+        */
+
+        /*
+                16. fromCharCode():
+        */
+
+        /*
+                17. trim(): 전체 문자열에서 공백을 제거한 문자열을 반환하는 메서드
+        */
+
+
+    </script>
+</body>
+</html>

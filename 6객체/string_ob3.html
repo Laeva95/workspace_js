@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            웹 사이트 방문자에게 이름을 영문으로 입력받음
+            해당 영문 이름에 소문자가 섞여 있다면 모두 대문자로 변경해서 출력
+
+            또한 사이트 방문자의 연락처를 입력받음
+            연락처 뒷번호가 노출되지 않도록 ****로 표시
+        */
+
+        // 1. prompt() 메소드를 호출해서 연락처를 입력 받음 userPhone
+        let userPhone = prompt("연락처를 입력해주세요", "01012345678");
+        // 2. 입력받은 연락처 뒷자리 4자리를 제외한 앞 전화번호 문자열을 자른 후에 뒷 4자리는 별표로 표시해서 result 변수에 저장
+        let result = userPhone.substr(0, userPhone.length - 4).concat("****");
+        // 3. 해당 결과값 "0101234****"를 브라우저에 출력
+        document.write(result, "<br>");
+
+        document.write("---------------------------------------------------<br>");
+
+        // 1. prompt() 메소드를 호출해서 userName에 영문 이름 저장
+        let userName = prompt("이름을 영문으로 입력해주세요.", "name");
+        // 2. 입력받은 영문 이름을 모두 대문자로 변환해서 upperName에 저장
+        let upperName = userName.toUpperCase();
+        // 3. upperName에 저장된 이름을 출력 후 줄바꿈 하나 출력
+        document.write(upperName, "<br>");
+
+
+
+
+
+
+    </script>
+</body>
+</html>

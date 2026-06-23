@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            문자열 객체 메모리의 메서드를 이용해서 사이트 이용자로부터 입력받은 이메일의 유효성 검사
+        */
+
+        // 1. 사이트 이용자로부터 이메일을 입력받아 userEmail 변수에 저장
+        let userEmail = prompt("이메일을 입력해주세요", "");
+
+        // 2. 이메일 작성시 검사할 문자열들이 저장된 배열 메모리 생성
+        let arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"];
+
+        // 3. 입력한 이메일에 @가 포함되어 있는지 확인해서 check 변수에 저장
+        let check = false;
+
+        // 4. 입력한 이메일 문자열과 arrUrl 배열에 저장된 단어를 비교해서 일치하는지 확인해서 check2 변수에 저장
+        let check2 = false;
+
+        // 5. 입력한 이메일 전체 문자열에서 "@"가 포함되어 있는지 확인하고 check 변수에 저장
+        check = userEmail.includes('@');                             // userEmail.includes('@')와 동일한 기능
+
+        // 6. 입력한 이메일의 끝이 arrUrl의 요소 중 하나인지 확인하고 check2 변수에 저장
+        let str = userEmail.substring(userEmail.indexOf('.'));          // userEmail에 저장된 첫번째 '.'부터 끝까지 str 변수에 저장
+        arrUrl.forEach(function(url){
+                if(str === url){                                        // str에 저장된 값이 url에 저장된 값들 중 하나라도 같은 값이 있다면 true
+                    check2 = true;                      
+                }
+            }
+        );
+
+        // 7. check, check2가 모두 true인지 확인
+        if(check && check2){
+            document.write(userEmail);
+        }else{
+            alert("잘못된 이메일을 입력했습니다.");
+        }
+
+
+    </script>
+</body>
+</html>
