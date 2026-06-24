@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            confirm(): 확인 버튼과 취소 버튼이 있는 창을 출력. 확인을 누르면 true, 취소를 누르면 false 반환
+        */
+
+        let result = window.confirm("정말로 이 파일을 삭제하시겠어요?");
+
+        if(result){
+            document.write("파일이 삭제됨");
+        }else{
+            document.write("파일이 삭제되지 않음");
+        }
+
+        /*
+            alert(): 경고 창을 띄우는 메서드
+        */
+
+        window.alert("경고!");
+
+        /*
+            prompt(): 사용자 입력창을 표시해서 입력받은 문자열을 반환 받는 메서드
+        */
+
+        let result2 = window.prompt("정수 하나를 입력하세요");
+
+        document.write(result2);
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            사이트 이용자에게 핸드폰 번호를 입력받아 정규표현식 검사
+        */
+        
+        let userCall = prompt("핸드폰 번호 입력");
+
+        let reg1 = /^(010|016|011)\d{3,4}\d{4}$/
+        /*
+            ^(010|016|011): 010, 016, 011 셋 중 하나로 시작하는지 검사
+            \d{3,4}: 숫자로 3~4 글자 사이로 입력했는지 검사
+            \d{4}: 숫자로 4글자를 입력했는지 검사
+            $: 문자열의 끝을 나타내는 기호
+        */
+
+        while(true){
+            let result = reg1.test(userCall);
+            
+            if(result){
+                break;
+            } else{
+                alert("잘못된 입력입니다.");
+            }
+
+            userCall = prompt("핸드폰 번호 입력");
+        }
+
+
+    </script>
+</body>
+</html>

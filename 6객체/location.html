@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            location 객체에서 제공하는 href 속성
+            href: 사이트 이용자가 입력했던 url을 얻을 수 있음
+            locateion.href = "url";
+            현재 웹브라우저에서 해당 url으로 재요청 
+        */
+
+        document.write(location.href);
+
+        window.setTimeout(function(){
+            document.write("3초뒤 실행");
+            location.href = "www.naver.com";
+        }, 3000);
+
+        /*
+            현재 클라이언트가 보고 있는 화면을 재요청하기 위해 자동으로
+            웹브라우저 주소창에 현재 보고 있는 화면의 url이 입력되어 재요청하는 메서드
+        */
+
+
+
+    </script>
+</body>
+</html>

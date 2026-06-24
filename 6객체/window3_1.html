@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            타이머 만들기
+            1초 간격으로 현재 날짜 정보와 시간 정보를 사이트 화면에 반복해서 보여주기
+        */
+
+        // let timer = window.setInterval(function(){
+        //     let date = new Date();
+            
+        //     let currentTime = date.getFullYear() + "년 "
+        //                     + (date.getMonth() + 1) + "월 "
+        //                     + date.getDate() + "일 "
+        //                     + date.getHours() + "시 "
+        //                     + date.getMinutes() + "분 "
+        //                     + date.getSeconds() + "초";
+
+        //     document.write(currentTime, "<br>");
+        // }, 1000);
+
+        // 현재 년 월 일 시 분 초 정보를 제공하는 기능의 함수
+        function time(){
+            let date = new Date();
+            
+            let currentTime = date.getFullYear() + "년 "
+                            + (date.getMonth() + 1) + "월 "
+                            + date.getDate() + "일 "
+                            + date.getHours() + "시 "
+                            + date.getMinutes() + "분 "
+                            + date.getSeconds() + "초";
+
+            document.write(currentTime, "<br>");
+        }
+        window.setInterval(time, 1000);
+
+
+
+    </script>
+</body>
+</html>
