@@ -17,10 +17,11 @@
             dataset.cnt: data-cnt 속성 값을 값 형태로 가져옴
         */
         buttonEls.forEach(el => {
-            console.log(el.dataset);
-            console.log(el.dataset.cnt);
-            el.dataset.cnt = 50;
-            console.log(el.dataset.cnt);
+            console.log(el.dataset);            // 출력: DOMStringMap 
+            console.log(el.dataset.cnt);        // 출력: 10, 0
+
+            el.dataset.cnt = 50;                // data-cnt = 50
+            console.log(el.dataset.cnt);        // 출력: 50
         });
 
     </script>
