@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red-color{
+            color: red;
+        }
+        .fz20{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p id="text" class="red-color fz20">text</p> -->
+    <p id="text">text</p>
+
+    <script>
+        const pEl = document.querySelector("#text");
+
+        // 클래스 속성 추가
+        // 두줄 작성
+        // pEl.classList.add("red-color");  // class="red-color" 속성 추가
+        // pEl.classList.add("fz20");       // class="fz20" 속성 추가
+
+
+        // 한줄 작성
+        pEl.classList.add("red-color", "fz20");
+
+        // 클래스 속성 삭제
+        pEl.classList.remove("red-color", "fz20");
+
+        window.setInterval(function(){
+            // 클래스 속성이 있다면 삭제, 없다면 추가함
+            pEl.classList.toggle("red-color");
+        } , 1000);
+
+    </script>
+</body>
+</html>

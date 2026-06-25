@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="title">Hello, <span style="display: none;">javascript!</span></p>
+
+    <script>
+        /*
+        - textContent: 선택한 요소 노드의 모든 텍스트를 가져옴
+        - innerText: 선택한 요소 노드의 첫번째 텍스트를 가져옴
+        - innerHTML: 선택한 요소 노드의 HTML 태그를 포함한 모든 요소를 가져옴
+        */
+        console.log(document.getElementById("title").textContent);  // Hello, javascript!
+        console.log(document.getElementById("title").innerText);    // Hello,
+        console.log(document.getElementById("title").innerHTML);    // Hello, <span style="display: none;">javascript!</span>
+    </script>
+</body>
+</html>

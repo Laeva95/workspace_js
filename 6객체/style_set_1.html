@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">text</p>
+    <script>
+        // p 요소 노드 선택해서 상수에 저장
+        const pEl = document.querySelector("#text");
+
+        /*
+            선택한 요소노드에 스타일 정의 방법
+                요소노드.style.css속성명 = "값";
+        */
+
+        // 선택한 p 요소 노드의 텍스트 노드 색상을 빨간색으로 변경
+        pEl.style.color = "red";
+
+        // 선택한 p 요소 노드의 텍스트 노드를 다른 상수에 저장
+        const pEl2 = document.getElementById("text");
+
+        // 배경색을 빨간색으로 변경
+        pEl2.style.backgroundColor = "#FF0000";
+        pEl2.style.color = "#FFFFFF";
+        pEl2.style.fontSize = "20px";
+
+    </script>
+</body>
+</html>

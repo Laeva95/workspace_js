@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">title</h1>
+    <p class="text">text-1</p>
+    <p class="text">text-2</p>
+
+
+
+    <script>
+        /*
+            getElementsByTagName("tag"): tag라는 이름의 태그로 작성된 요소들을 가져옴
+        */
+
+        const tagEls = document.getElementsByTagName("p");      // 모든 <p> 요소 선택
+
+        // 가져온 <p> 요소의 0번째, 1번째 출력
+        console.log(tagEls[0]);
+        console.log(tagEls[1]);
+
+        /*
+            getElementsByClassName("class"): class라는 이름의 클래스 값을 갖는 요소들을 가져옴
+        */
+
+        const classEls = document.getElementsByClassName("text");   // 모든 class="text" 요소 선택
+
+        // 가져온 class="text" 요소의 0번째, 1번째 출력
+        console.log(classEls[0]);
+        console.log(classEls[1]);
+
+        /*
+            getElementById("id"): id라는 이름의 id 속성 값을 갖는 요소를 가져옴
+        */
+
+        const el = document.getElementById("title");        // id="title" 요소 선택
+
+        console.log(el);
+
+
+
+    </script>
+</body>
+</html>
