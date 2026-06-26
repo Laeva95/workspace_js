@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="frm1">
+        <label for="uname">이름</label>
+        <input type="text" id="uname" name="uname" value="김길동">
+        <label for="age">나이</label>
+        <input type="text" id="age" name="age">
+        <select id="gender" name="gender">
+            <option value="male">남</option>
+            <option value="female">여</option>
+        </select>
+
+        <button type="submit">전송</button>
+    </form>
+    <script>
+        // 1. name 속성 값을 통해 form 태그 요소 하나 가져오기
+        const frm = document.frm1;
+
+        // 2. form 태그 내부의 모든 입력 요소 가져오기
+        //      label 태그는 가져오지 않음
+        const HCC = frm.elements;
+
+        // 3. name 속성 값을 통해 input 태그 요소 하나 가져오기
+        console.log(HCC['uname']);
+
+        // 4. name 속성 값을 통해 uname input 태그 요소 하나 가져오기
+        const inputName = document.frm1.uname;
+
+        console.log(inputName);
+
+        // 5. name 속성 값을 통해 age input 태그 요소 하나 가져오기
+        const inputAge = document.frm1.age;
+
+        console.log(inputAge);
+
+        // --------------------------------------------------------------------------------------------------------
+
+        // 1. forms 속성을 통해 form 전체를 가져오기
+        const formsVar = document.forms;
+
+        // 2. forms의 0번째 값과 name 속성 값을 통해 
+        //      첫번째 form 요소의 gender input 태그 요소 하나 가져오기
+        const selectGender =  document.forms[0].gender;
+
+        const selectedValue = selectGender.value;
+
+        console.log(selectedValue);
+
+    </script>
+</body>
+</html>
