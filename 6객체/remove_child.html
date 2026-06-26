@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            웹 브라우저 창이 문서 내부의 모든 html 요소 노드를 읽은 후에 실행
+            load 이벤트의 처리를 할 함수 작성
+        */
+       window.onload = () => {
+            // 1. p 요소 노드 선택
+            const pEl = document.querySelector("p");
+
+            // 2. 선택한 pEl 요소에 저장된 자식 노드에 접근해서 삭제
+            pEl.parentNode.removeChild(pEl);
+       }
+
+    </script>
+</head>
+<body>
+    <p>text 1</p>
+
+    <a href="https://www.gilbut.co.kr">길벗</a>
+
+    <a href="https://www.google.co.kr">구글</a>
+    
+</body>
+</html>

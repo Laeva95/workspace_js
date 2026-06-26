@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="https://www.naver.com">네이버</a><br>
+    <h1 id="hi">안녕</h1><br>
+    <p class="p1" id="p2">안녕하세요 반갑습니다.</p><br>
+    <h2 class="red-color" id="h">안녕2</h2>
+
+    <script>
+        // 노드.getAttribute("속성명");               해당 속성의 값을 반환
+        // 노드.setAttribute("속성명", 값);           해당 속성 값 변경/추가
+        // 노드.removeAttribute("속성명");            해당 속성 삭제
+        /*
+            선택한 요소 노드의 속성 삭제
+        */
+
+        // h2 요소 선택해서 가져오기
+        const h2 = document.querySelector(".red-color");
+
+        // h2 요소의 id 속성 삭제
+        h2.removeAttribute("id");
+
+        /*
+            선택한 요소 노드의 속성 값 변경
+        */
+
+        // p 요소 선택해서 가져오기
+        const p = document.getElementById("p2");
+
+        // p 요소의 id 속성 값 "p2" -> "p1"변경
+        p.setAttribute("id", "p1");
+
+        /*
+            선택한 요소의 속성 값 가져오기
+        */
+
+        // h1 요소 선택해서 가져오기
+        const h1 = document.getElementsByTagName("h1")[0];
+
+        // h1 요소의 id 값 가져오기
+        const h1Value = h1.getAttribute("id");
+
+        console.log(h1Value);
+
+        // a 요소 선택해서 가져오기
+        const aEl = document.querySelector("a"); 
+
+        // a 요소의 href 속성 값 출력
+        console.log(aEl.getAttribute("href"));
+
+        // a 요소의 href 속성 값 변경
+        aEl.setAttribute("href", "https://www.google.co.kr");
+
+        // a 요소의 텍스트 값 변경
+        aEl.textContent = "구글";
+
+    </script>
+</body>
+</html>

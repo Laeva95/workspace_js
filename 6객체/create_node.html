@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 순서 1. a 요소 생성해서 추가
+        const aEl = document.createElement("a");
+
+        // 순서 2. <body>부모 요소 노드 사이에 자식 노드 추가
+        document.body.appendChild(aEl);
+
+        // 순서 3. a 요소 노드에 텍스트 노드 추가
+        const textEl = document.createTextNode("길벗");
+
+        aEl.appendChild(textEl);
+
+        // 순서 4. a 요소 노드에 href 속성 노드 추가
+        const hrefEl = document.createAttribute("href");
+
+        hrefEl.value = "https://www.naver.com";     // 속성 노드에 값 변경하기 속성노드.value = 값;
+
+        aEl.setAttributeNode(hrefEl);               // 요소에 속성 노드 추가
+        
+
+    </script>
+</body>
+</html>
