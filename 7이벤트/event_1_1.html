@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // window.onload 이벤트로 등록한 함수가 button 태그의 속성으로 등록한 함수를 덮어씌움
+        window.onload = function(){
+            document.getElementById("myButton").onclick =  function(){
+                alert('DOM Event');
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="myButton" onclick="alert('HTML Event');">Click me</button>
+</body>
+</html>

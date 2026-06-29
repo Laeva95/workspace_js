@@ -54,6 +54,7 @@
     	   //value속성에 13450000대신 basic_car변수값으로 설정해서 브라우저화면에 체크한 누적금액보여주기
          //  document.getElementById("total").setAttribute("value", basic_car); <----- value 속성의 값을 직접 변경하면 변경된 값으로 저장됨
     	   document.getElementById("total").value = basic_car;
+         document.getElementById("total").setAttribute("value", basic_car);
 
     }//car함수 끝
     

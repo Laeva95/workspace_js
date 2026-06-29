@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 선언문 script 작성 위치는 아래의 <h1>안녕 태그의 위쪽에 작성됨 -->
+    <script>
+        /*
+            load 이벤트:  웹 브라우저 창이 웹 문서 내부의 모든 html 태그를 읽어들이는 동작을 말함
+                         load 이벤트는 웹 브라우저 창 하나의 정보를 가지고 있는 window 객체에
+                        등록해야 함
+                         이유는 <h1>안녕 태그를 자바 스크립트 코드로 가져오기 위함
+                        
+                등록 방법: window.onload = function(){
+
+                                load 이벤트 시 실행되는 코드;
+
+                            }
+                            load 이벤트가 발생했을 때 자동으로 호출되는 함수를 작성
+        */
+                            
+        // window 객체에 load 이벤트 등록
+        window.onload = function(){
+            // <h1>태그를 선택해서 가져오는 코드
+            document.querySelector("h1").style.color = "red";
+        };
+
+    </script>
+</head>
+<body>
+    <h1>안녕</h1>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent" style="padding: 20px; background-color: lightblue;">
+        <!-- 부모 영역 -->
+         parent
+        <div id="child" style="padding: 20px; background-color: lightcoral;">
+            <!-- 자식 영역 -->
+            child
+        </div>
+    </div>
+
+    <script>
+        /*
+            캡처링 단계 이벤트처리
+                이벤트 등록 메서드 addEventListener 메서드에 true로 설정되어
+                캡처링 단계에서 이벤트를 처리
+        */
+       
+        document.getElementById("parent").addEventListener("click", function(){
+            alert('Parent capturing');
+        }, {capture: true});
+
+        document.getElementById("child").addEventListener("click", function(){
+            alert('Child capturing');
+        });
+        </script>
+</body>
+</html>

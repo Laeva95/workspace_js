@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .convert{
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <p>버튼을 클릭하면 배경색과 글자색이 바뀝니다.</p>
+    <button>Click</button>
+
+    <script>
+        const button = document.querySelector("button");
+
+        // button.addEventListener("click", change);
+
+        // function change(){
+        //     // body 태그에 class="convert" 속성이 있다면 삭제, 속성이 없다면 추가
+        //     document.body.classList.toggle('convert');
+        // }
+
+        button.addEventListener("click", () => { document.body.classList.toggle("convert"); });
+
+    </script>
+</body>
+</html>

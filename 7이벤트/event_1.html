@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            <button>에 두 가지 이벤트 등록 방식으로 click 이벤트와 mouseover 이벤트를 등록시켜
+            사용자가 이벤트를 했을 때 배경색이 바뀌도록 하는 예제
+       */
+        
+       /*
+            이벤트 등록 방식 1.
+       */
+        let color = ["white", "yellow", "aqua", "purple"];
+
+        let i = 0;
+
+       function colorBg(){
+            i++;
+
+            let bodyTag = document.getElementsByTagName("body")[0];
+
+            // % color.length를 통해 배열의 모든 요소 순회 후 인덱스 0으로 되돌아가 반복
+            bodyTag.style.backgroundColor = color[i % color.length];
+       }
+
+       /*
+            이벤트 등록 방식 2.
+       */
+       // window 객체에 이벤트 등록
+       window.onload = function(){
+            let btn2 = document.querySelector("#btn2");
+
+            // btn2 클릭 시 미리 만들어둔 colorBg() 함수를 실행하도록 이벤트 등록
+            btn2.onclick = function(){
+                colorBg();
+            };
+
+            let btn4 = document.querySelector("#btn4");
+
+            // btn4 버튼에서 마우스가 벗어날 때 colorBg() 함수를 실행하도록 이벤트 등록
+            btn4.onmouseout = function(){
+                colorBg();
+            };
+       };
+
+    </script>
+</head>
+<body>
+    <p>
+        <!-- 
+            이벤트 등록 방식 1: 요소에 직접 on이벤트종류명을 작성해서 이벤트 등록
+
+            버튼1을 한번 클릭하면 colorBg(); 함수를 호출되게 하여 이벤트 처리
+        -->
+        <button onclick="colorBg();">버튼1</button>
+    </p>
+        <!-- 
+            이벤트 등록 방식2: 자바 스크립트 코드로 등록할 요소를 선택해서 이벤트 등록
+        -->
+    <p>
+        <button id="btn2">버튼2</button>
+    </p>
+    <p>
+        <!-- 
+            이벤트 등록 방식 1: 요소에 직접 on이벤트종류명을 작성해서 이벤트 등록
+
+            버튼3에 마우스 포인터를 올리는 mouseover 동작을 했을 때 colorBg()함수 호출
+        -->
+        <button onmouseover="colorBg();">버튼3</button>
+    </p>
+    <p>
+        <!-- 
+            이벤트 등록 방식2: 자바 스크립트 코드로 등록할 요소를 선택해서 이벤트 등록
+
+            버튼4에 마우스 포인터가 올라가있는 상태에서 마우스 포인터가 벗어나는 동작을 했을 때 colorBg() 함수 호출
+        -->
+        <button id="btn4">버튼4</button>
+    </p>
+</body>
+</html>
