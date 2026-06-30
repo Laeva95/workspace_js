@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #222;
+        }
+
+        .signup-container {
+            max-width: 760px;
+            margin: 40px auto;
+            padding: 24px;
+        }
+
+        .signup-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+        }
+
+        .signup-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .signup-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: transparent;
+        }
+
+        .signup-table td {
+            padding: 10px;
+            border: 1px solid #dce4ef;
+            vertical-align: top;
+        }
+
+        .signup-table input[type="text"],
+        .signup-table input[type="password"],
+        .signup-table select,
+        .signup-table textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cfd8e3;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .signup-table textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .signup-table button,
+        .signup-table input[type="button"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .signup-table button:hover,
+        .signup-table input[type="button"]:hover {
+            background: #1d4ed8;
+        }
+
+        span {
+            color: red;
+        }
+
+        @media (max-width: 600px) {
+            .signup-container {
+                padding: 16px;
+                margin: 20px auto;
+            }
+
+            .signup-card {
+                padding: 16px;
+            }
+
+            .signup-table td {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+  <div class="signup-container">
+    <div class="signup-card">
+      <div class="signup-title">회원가입</div>
+
+      <table class="signup-table">
+        <tr>
+            <td colspan="2" align="center">회원가입</td>
+        </tr>
+        <tr>
+            <td>*이름</td>
+            <td>
+                <input type="text" name="uName" id="uName" placeholder="김개똥" />
+                <span id="name">이름을 입력해주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td>*ID</td>
+            <td>
+                <input type="text" name="uID" id="uID" placeholder="admin" />
+                <span id="id">ID를 입력해주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td>*비밀번호</td>
+            <td>
+                <input type="password" name="uPWD" id="uPWD" placeholder="1234" />
+                <span id="pwd">비밀번호를 입력해주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td>*비밀번호 확인</td>
+            <td>
+                <input type="password" name="uPWD_Confirm" id="uPWD_Confirm" />
+                <span id="pwd_confirm">비밀번호 확인란 입력해주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td>*주소</td>
+            <td>
+                <input type="text" id="sample4_postcode" placeholder="우편번호">
+                <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+                <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                <span id="guide" style="color:#999;display:none"></span>
+                <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+                <input type="text" id="sample4_extraAddress" placeholder="참고항목">   
+            </td>
+        </tr>
+        <tr>
+            <td>*직업</td>
+            <td>
+                <select name="work" id="work">
+                    <option value="직업명" selected>직업명</option>
+                    <option value="기타">기타</option>
+                    <option value="회사원">회사원</option>
+                    <option value="학생">학생</option>
+                </select>
+                <span id="work-error">직업 하나를 선택해 주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td>*성별</td>
+            <td>
+                남자<input type="radio" name="sex" id="s1" value="male" />
+                여자<input type="radio" name="sex" id="s2" value="female" />
+                <span id="gender-error">성별을 체크해 주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td>*취미</td>
+            <td>
+                <input type="checkbox" name="hobby" id="h1" value="독서" />독서
+                <input type="checkbox" name="hobby" id="h2" value="등산" />등산
+                <input type="checkbox" name="hobby" id="h3" value="낚시" />낚시
+                <span id="hobby-error">취미를 하나이상 체크 해 주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td>*가입동기</td>
+            <td>
+                <textarea rows="20" cols="100" name="motivation" placeholder="가입동기를 두줄 이상 입력 하시오."></textarea>
+                <br><span id="motivation-error">가입 동기를 입력해주세요</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="가입" id="submit" />
+            </td>
+        </tr>
+    </table>
+    
+
+
+    <!-- 카카오 주소 api 스크립트 -->
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+        function sample4_execDaumPostcode() {
+            new kakao.Postcode({
+                oncomplete: function(data) {
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                    // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var roadAddr = data.roadAddress; // 도로명 주소 변수
+                    var extraRoadAddr = ''; // 참고 항목 변수
+
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동로가]$/.test(data.bname)){
+                        extraRoadAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraRoadAddr !== ''){
+                        extraRoadAddr = ' (' + extraRoadAddr + ')';
+                    }
+
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('sample4_postcode').value = data.zonecode;
+                    document.getElementById("sample4_roadAddress").value = roadAddr;
+                    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+                    
+                    // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+                    if(roadAddr !== ''){
+                        document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                    } else {
+                        document.getElementById("sample4_extraAddress").value = '';
+                    }
+
+                    var guideTextBox = document.getElementById("guide");
+                    // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+                    if(data.autoRoadAddress) {
+                        var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                        guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+                        guideTextBox.style.display = 'block';
+
+                    } else if(data.autoJibunAddress) {
+                        var expJibunAddr = data.autoJibunAddress;
+                        guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                        guideTextBox.style.display = 'block';
+                    } else {
+                        guideTextBox.innerHTML = '';
+                        guideTextBox.style.display = 'none';
+                    }
+                }
+            }).open();
+        }
+
+
+        // -------------------------------------------------------------------------------------------------------------
+
+        // 회원가입 유효성 검사를 위한 객체 생성
+        const verificationType = { 
+            NAME: 0,
+            ID: 1,
+            PWD: 2,
+            PWD_CONFIRM: 3,
+            JOB: 4,
+            GENDER: 5,
+            HOBBY: 6,
+            MOTIVATION: 7,
+         };
+
+         // Object.freeze(객체명);
+         // 매개변수로 전달되는 객체의 속성 값을 변경할 수 없게 만드는 메서드
+         Object.freeze(verificationType);
+
+         // 유효성 검사 결과값을 저장할 배열 선언
+         let checkVerifications = [];
+
+         // Object.Keys(객체명).length;
+         // 매개변수로 전달되는 객체의 속성 개수를 반환
+         for(let i = 0; i < Object.keys(verificationType).length; i++){
+            // 배열의 길이 = 유효성 검사를 위한 속성값 개수
+            // 배열의 값 = 모두 false
+            checkVerifications.push(false);
+         }
+
+         // 현재 input 요소 값이 공백인지 확인하는 함수
+         function nullCheck(element){
+            return getValue(element) === "";
+         }
+         // 현재 input 요소 값의 value를 반환하는 함수
+         function getValue(element){
+            return element.value.trim();
+         }
+         // 현재 input 요소 값의 길이를 반환하는 함수
+         function getLength(element){
+            return getValue(element).length;
+         }
+
+
+         // 이름 유효성 검사
+         const inputName = document.getElementById("uName");
+         const nameError = document.getElementById("name");
+
+         // keyup 이벤트 등록
+         inputName.addEventListener("keyup", validateName);
+
+         function validateName(){
+            if(nullCheck(inputName)){
+                // 이름을 제대로 입력하지 않았을 경우
+                nameError.innerText = "이름을 입력해주세요";
+
+                checkVerifications[verificationType.NAME] = false;
+            } else{
+                // 이름을 제대로 입력했을 경우
+                nameError.innerText = "";
+
+                checkVerifications[verificationType.NAME] = true;
+            }
+         }
+
+         // ID 유효성 검사
+         const inputID = document.getElementById("uID");
+         const idError = document.getElementById("id");
+
+         // keyup 이벤트 등록
+         inputID.addEventListener("keyup", validateID);
+
+         function validateID(){
+            if(nullCheck(inputID)){
+                // id를 입력하지 않았을 경우
+                idError.innerText = "ID를 입력해주세요";
+
+                checkVerifications[verificationType.ID] = false;
+            } else if(getLength(inputID) < 3 || getLength(inputID) > 7){
+                // id의 길이가 3보다 작거나 7보다 클 경우
+                idError.innerText = "ID를 3 ~ 7자 사이로 입력해주세요";
+
+                checkVerifications[verificationType.ID] = false;
+            } else{
+                // id를 제대로 입력했을 경우
+                idError.innerText = "";
+
+                checkVerifications[verificationType.ID] = true;
+            }
+         }
+
+         // 비밀번호 유효성 검사
+         const inputPWD = document.getElementById("uPWD");
+         const pwdError = document.getElementById("pwd");
+
+         // keyup 이벤트 등록
+         inputPWD.addEventListener("keyup", validatePWD);
+
+         function validatePWD(){
+            pwdError.innerText = "";
+            checkVerifications[verificationType.PWD] = false;
+
+            nullCheck(inputPWD) ? pwdError.innerText = "비밀번호를 입력해주세요" 
+            : (getLength(inputPWD) < 4 || getLength(inputPWD) > 10) ? pwdError.innerText = "비밀번호를 4 ~ 10자 사이로 입력해주세요" 
+            : checkVerifications[verificationType.PWD] = true;
+            
+
+            // if(nullCheck(inputPWD)){
+            //     // 비밀번호를 입력하지 않았을 경우
+            //     pwdError.innerText = "비밀번호를 입력해주세요";
+
+            //     checkVerifications[verificationType.PWD] = false;
+            // } else if(getLength(inputPWD) < 4 || getLength(inputPWD) > 10){
+            //     // 비밀번호의 길이가 4보다 작거나 10보다 클 경우
+            //     pwdError.innerText = "비밀번호를 4 ~ 10자 사이로 입력해주세요";
+
+            //     checkVerifications[verificationType.PWD] = false;
+            // } else{
+            //     // 비밀번호를 제대로 입력했을 경우
+            //     pwdError.innerText = "";
+
+            //     checkVerifications[verificationType.PWD] = true;
+            // }
+
+            // 비밀번호를 중간에 바꿨다면 비밀번호 확인도 다시 체크
+            validatePWDConfirm();
+         }
+
+         // 비밀번호 확인 유효성 검사
+         const inputPWD_Confirm = document.getElementById("uPWD_Confirm");
+         const pwd_confirmError = document.getElementById("pwd_confirm");
+
+         inputPWD_Confirm.addEventListener("keyup", validatePWDConfirm);
+         
+         function validatePWDConfirm(){
+            pwd_confirmError.innerText = "";
+            checkVerifications[verificationType.PWD_CONFIRM] = false;
+
+            if(nullCheck(inputPWD_Confirm)){
+                // 비밀번호 확인값을 입력하지 않았을 경우
+                pwd_confirmError.innerText = "비밀번호 확인을 입력해주세요";
+            }
+            else if(getValue(inputPWD_Confirm) !== getValue(inputPWD)){
+                // 비밀번호 확인값이 비밀번호와 다를 경우
+                pwd_confirmError.innerText = "비밀번호와 다릅니다";
+            } else{
+                // 비밀번호 확인값을 제대로 입력했을 경우
+                checkVerifications[verificationType.PWD_CONFIRM] = true;
+            }
+         }
+
+         // 직업 선택 드롭 다운 <select> 요소와 <span> 요소를 변수에 저장
+        const selectWork = document.getElementById("work");
+        const workError = document.getElementById("work-error");
+
+        // <select> 요소 내부에 작성된 옵션 중에서 하나를 선택할 때 이벤트 등록
+        selectWork.addEventListener("change", () => {
+            workError.innerText = "";
+            checkVerifications[verificationType.JOB] = false;
+            // 직업 option 3개 중에 하나를 선택했는지 확인
+            if(selectWork.value === "직업명"){  
+                // 직업을 선택하지 않았다면
+                workError.innerText = "직업을 선택해주세요";
+            } else{
+                // 직업을 선택했다면
+                checkVerifications[verificationType.JOB] = true;
+            }
+        });
+        
+        // 성별을 체크했는지 확인하기 위해 성별 라디오 요소 저장
+        const radioGenders = document.getElementsByName("sex");
+        const genderError = document.getElementById("gender-error");
+
+        // NodeList 배열인 radioGenders에 대해 forEach() 메소드를 이용해 각 이벤트 등록
+        radioGenders.forEach((e) => {
+            // change 이벤트 발생 시 함수 호출
+            e.addEventListener("change", () => {
+                if(!radioGenders[0].checked && !radioGenders[1].checked){
+                    // 아무 성별을 선택하지 않았을 경우
+                    genderError.innerText = "성별을 선택해주세요";
+
+                    checkVerifications[verificationType.GENDER] = false;
+                } else{
+                    // 성별을 선택했을 경우
+                    genderError.innerText = "";
+
+                    checkVerifications[verificationType.GENDER] = true;
+                }
+            });
+        });
+
+        // 취미를 선택했는지 확인하기 위해 취미 체크박스 요소 저장
+        const checkboxHobbies = document.getElementsByName("hobby");
+        const hobbyError = document.getElementById("hobby-error");
+
+        checkboxHobbies.forEach((e) => {
+            e.addEventListener("change", () => {
+                // 취미가 하나라도 선택되었는지 확인하는 변수
+                let flag = false;
+
+                // 모든 체크박스를 순회하여 확인
+                checkboxHobbies.forEach((e) => {
+                    // 하나라도 선택되어 있으면 flag = true;
+                    if(e.checked){
+                        flag = true;
+                    }
+                });
+
+                if(!flag){
+                    // 취미가 하나도 선택되어 있지 않은 경우
+                    hobbyError.innerText = "취미를 하나 이상 선택해 주세요"
+                    checkVerifications[verificationType.HOBBY] = false;
+                } else{
+                    // 취미가 하나라도 선택 된 경우
+                    hobbyError.innerText = "";
+                    checkVerifications[verificationType.HOBBY] = true;
+                }
+
+            });
+        });
+
+
+        // 가입 동기를 2줄 이상 입력했는지 확인
+        const areaMotivation = document.getElementsByName("motivation")[0];
+        const motivationError = document.getElementById("motivation-error");
+
+        // keyup 이벤트 등록
+        areaMotivation.addEventListener("keyup", function(){
+            // 입력된 가입 동기가 2줄 이상인지 확인
+            // "\r\n" 윈도우 운영체제에서 줄바꿈 기호
+            let lineCount = areaMotivation.value.split(/\r*\n/).length;
+
+            if(lineCount >= 2){
+                motivationError.innerText = "";
+
+                checkVerifications[verificationType.MOTIVATION] = true;
+            } else{
+                motivationError.innerText = "가입 동기를 2줄 이상 입력해 주세요";
+
+                checkVerifications[verificationType.MOTIVATION] = false;
+            }
+
+        });
+
+        // 버튼을 가져와서 클릭 이벤트 등록
+        const button = document.querySelector("#submit").addEventListener("click", () => {
+
+            // 배열.every(): 배열 내의 모든 요소가 true라면 true를 반환하는 함수
+            if(checkVerifications.every(e => e)){
+                alert('회원가입 요청이 완료되었습니다.');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+

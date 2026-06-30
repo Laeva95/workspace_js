@@ -12,6 +12,10 @@
         <div id="child" style="padding: 20px; background-color: lightcoral;">
             <!-- 자식 영역 -->
             child
+            <div id="child2" style="padding: 20px; background-color: lightseagreen;">
+                <!-- 자식2 영역 -->
+                child2
+            </div>
         </div>
     </div>
 
@@ -24,11 +28,18 @@
        
         document.getElementById("parent").addEventListener("click", function(){
             alert('Parent capturing');
-        }, {capture: true});
+        }, true);
 
         document.getElementById("child").addEventListener("click", function(){
             alert('Child capturing');
-        });
+        }, true);
+
+        document.getElementById("child2").addEventListener("click", function(){
+            alert('Child2 capturing');
+        }, true);
+        window.addEventListener("click", function(){
+            alert('window');
+        }, true);
         </script>
 </body>
 </html>

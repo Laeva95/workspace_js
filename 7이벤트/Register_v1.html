@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #222;
+  }
+
+  .signup-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 24px;
+  }
+
+  .signup-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+  }
+
+  .signup-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 10px 0;
+  }
+
+  .form-label {
+    width: 120px;
+    font-weight: 600;
+    padding-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .form-inputs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .radio-group,
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    min-height: 14px;
+  }
+
+  .submit-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  button[type="submit"] {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background: #1d4ed8;
+  }
+
+  @media (max-width: 600px) {
+    .signup-container {
+      padding: 16px;
+      margin: 20px auto;
+    }
+
+    .signup-card {
+      padding: 16px;
+    }
+
+    .form-row {
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="signup-container">
+    <form id="signupForm" class="signup-card" action="a.jsp" method="post">
+      <div class="signup-title">회원가입</div>
+
+      <div class="form-row">
+        <div class="form-label">*이름</div>
+        <div class="form-inputs">
+          <input type="text" id="uName" value="" />
+          <span id="uNameError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">*ID</div>
+        <div class="form-inputs">
+          <input type="text" id="uID" />
+          <span id="uIDError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">*비밀번호</div>
+        <div class="form-inputs">
+          <input type="password" id="uPWD" />
+          <span id="uPWDError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">*비밀번호 확인</div>
+        <div class="form-inputs">
+          <input type="password" id="uPWD_Confirm" />
+          <span id="uPWDConfirmError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">*직업</div>
+        <div class="form-inputs">
+          <select id="work">
+            <option value="">직업명</option>
+            <option value="기타">기타</option>
+            <option value="회사원">회사원</option>
+            <option value="학생">학생</option>
+          </select>
+          <span id="workError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">*성별</div>
+        <div class="form-inputs">
+          <div class="radio-group">
+            <label><input type="radio" name="sex" value="male" /> 남자</label>
+            <label><input type="radio" name="sex" value="female" /> 여자</label>
+          </div>
+          <span id="sexError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">*취미</div>
+        <div class="form-inputs">
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="hobby" value="독서" /> 독서</label>
+            <label><input type="checkbox" name="hobby" value="등산" /> 등산</label>
+            <label><input type="checkbox" name="hobby" value="낚시" /> 낚시</label>
+          </div>
+          <span id="hobbyError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">*가입동기</div>
+        <div class="form-inputs">
+          <textarea id="motivation"></textarea>
+          <span id="motivationError" class="error-message"></span>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit">가입</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    /*
+      이벤트 등록 방법3.
+      선택한 요소에 특정 이벤트 종류를 등록하고
+      특정 이벤트가 발생했을 때 이벤트 처리 함수를 작성하는 문법
+
+      요소선택.addEventListener('등록할이벤트종류명중하나', 이벤트를 처리할 function(){});
+    */
+
+    // form 요소 가져오기
+    document.getElementById("signupForm").addEventListener("submit", (event) => {
+      // type="submit" 버튼을 클릭했을 때 입력되지 않은 항목이 있다면 전송 차단(proventDefault())
+      // -> 입력 데이터의 유효성 검사가 모두 끝나면 정보 전송
+      event.preventDefault();
+      
+      // 오류 메시지가 표시되어 있는 경우 이를 초기화
+      document.querySelectorAll(".error-message").forEach((e) => {
+        e.textContent = "";
+      });
+
+      // 모든 입력값이 유효한지 체크를 위한 변수 선언
+      let isValid = true;
+
+      // form 요소 내부에 작성된 모든 입력 요소의 입력값을 가져와서 저장
+      const uName = document.getElementById("uName").value.trim();
+      const uID = document.getElementById("uID").value.trim();
+      const uPWD = document.getElementById("uPWD").value.trim();
+      const uPWDConfirm = document.getElementById("uPWD_Confirm").value.trim();
+      const work = document.getElementById("work").value.trim();
+      const sex = document.querySelector("input[name='sex']:checked");
+      const hobbies = document.querySelectorAll("input[name='hobby']:checked");
+      const motivation = document.getElementById("motivation").value.trim();
+
+      // 유효성 검사 실패시 출력할 오류 메세지
+      function showError(id, msg){
+        // 이름을 입력하지 않았을 때의 오류 메세지
+        document.getElementById(id).textContent = msg;
+
+        // 이름을 입력하지 않았을 때 isValid = false;
+        isValid = false;
+      }
+
+
+      // 유효성 검사
+      // 이름
+      if(uName === ""){
+        showError("uNameError", "이름을 입력해 주세요");
+      }
+
+      // ID
+      if(uID === ""){
+        showError("uIDError", "ID를 입력해 주세요");
+      } else if(uID.length < 3 || uID.length > 7){
+        showError("uIDError", "ID를 3 ~ 7 글자 사이로 입력해 주세요");
+      }
+
+      // 패스워드
+      if(uPWD === ""){
+        showError("uPWDError", "패스워드를 입력해 주세요");
+      } else if(uPWD.length < 4 || uPWD.length > 10){
+        showError("uPWDError", "패스워드를 4 ~ 10 글자 사이로 입력해 주세요")
+      }
+
+      // 패스워드 확인
+      if(uPWDConfirm === ""){
+        showError("uPWDConfirmError", "패스워드 확인을 입력해 주세요");
+      } else if(uPWDConfirm !== uPWD){
+        showError("uPWDConfirmError", "패스워드와 패스워드 확인이 일치하지 않습니다")
+      }
+
+      // 직업
+      if(work === ""){
+        showError("workError", "직업을 선택해 주세요");
+      }
+
+      // 성별
+      if(!sex){
+        showError("sexError", "성별을 선택해 주세요");
+      }
+
+      // 취미
+      if(hobbies.length === 0){
+        showError("hobbyError", "취미를 선택해 주세요");
+      }
+
+      // 지원 동기
+      if(motivation === ""){
+        showError("motivationError", "지원 동기를 입력해 주세요");
+      }
+
+      // 모든 입력값이 유효한지 확인
+      if(isValid){
+        alert('회원가입 요청(톰캣 서버가 실행할 a.jsp 서버 페이지 요청이 정상 처리되었습니다.)');
+
+        this.submit();
+      }
+
+
+    });
+
+
+  </script>
+
+
+</body>
+</html>
+
+
+
+
+
