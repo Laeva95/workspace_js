@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/event.css">
+    <script>
+        window.onload = function(){
+            document.querySelector("p").addEventListener("click", event => {
+                console.log("p");
+                event.stopPropagation();
+            });
+        }
+    </script>
+</head>
+<body>
+    <!--
+        이벤트 버블링: 이벤트가 발생한 요소부터 부모 요소 방향으로 이벤트가 전파됨
+
+        event.stopPropagation() 메서드를 통해 이벤트의 전파를 막을 수 있음
+    -->
+    BODY
+    <div onclick="console.log('div');">
+        DIV
+        <section onclick="console.log('section');">
+            SECTION
+            <p>
+                P
+            </p>
+        </section>
+    </div>
+    <script>
+
+
+    </script>
+</body>
+</html>

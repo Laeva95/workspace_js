@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/event.css">
+</head>
+<body>
+    <!--
+        이벤트 캡쳐링: 부모 요소부터 이벤트가 발생한 요소로 이벤트가 전파됨
+
+        event.stopPropagation() 메서드를 통해 이벤트의 전파를 막을 수 있음
+    -->
+    BODY
+    <div onclick="console.log('div');">
+        DIV
+        <section onclick="console.log('section');">
+            SECTION
+            <p>
+                P
+            </p>
+        </section>
+    </div>
+    <script>
+        // 모든 html 요소 가져오기
+        const elements = document.querySelectorAll("*");
+
+        /*
+            for(let 변수 of 이터러블){
+                실행할 코드;
+            }
+            이터러블: 배열, 문자열, Set, Map 등
+        */
+        for(let i of elements){
+            i.addEventListener("click", (event) => {
+                console.log(event.currentTarget);
+            }, true);
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제 1</title>
+    <link rel="stylesheet" href="css/quiz-1.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>참가자 명단</h1>
+      <form>
+        <ul id="userInput">
+          <li>
+            <label for="username">이 름</label>
+            <input type="text" id="username" />
+          </li>
+          <li>
+            <label for="major">전 공</label>
+            <input type="text" id="major" />
+          </li>
+        </ul>
+        <button>등록하기</button>
+      </form>
+
+      <table id="attendant">
+        <thead>
+          <tr>
+            <th>이 름</th>
+            <th>전 공</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      // <input type="text" id="username" /> 요소를 선택
+      const username = document.querySelector("#username");
+
+      // <input type="text" id="major" /> 요소를 선택
+      const major = document.querySelector("#major");
+
+      // <form> 태그 내부의 <button> 요소를 선택
+      const bttn = document.querySelector("form > button");
+
+      // 선택한 <button> 요소에 click 이벤트 등록
+      bttn.addEventListener("click", (e) => {
+
+        // 버튼을 클릭했을 때 사이트를 재요청하지 않도록 방지
+        e.preventDefault();
+
+        // <table id="attendant"> 내부의 <tbody> 태그 선택
+        let tbody = document.querySelector("#attendant > tbody");
+
+        // 새로운 <tr> 요소 생성
+        let newTr = document.createElement("tr");
+
+        // 새로운 <td> 요소 생성 후 username 요소의 value 값을 입력
+        let nameTd = document.createElement("td");
+            nameTd.innerText = username.value;
+  
+        // username 요소의 value 값을 비워둠
+        username.value = "";
+
+        // 새로운 <td> 요소 생성 후 major 요소의 value 값을 입력
+        let majorTd = document.createElement("td");
+            majorTd.innerText = major.value;
+         
+        // major 요소의 value 값을 비워둠
+        major.value = "";
+
+        // newTr 요소의 자식으로 nameTd 추가
+        newTr.appendChild(nameTd);
+
+        // newTr 요소의 자식으로 majorTd 추가
+        newTr.appendChild(majorTd);
+
+        // tbody 요소의 자식으로 newTr 추가
+        tbody.appendChild(newTr);
+
+      });
+    </script>
+  </body>
+</html>

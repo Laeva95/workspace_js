@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bookList.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Book List</h1>
+        <form>
+            <ul id="bookInfo">
+                <li>
+                    <label for="title">제 목</label>
+                    <input type="text" id="title">
+                </li>
+                <li>
+                    <label for="author">저 자</label>
+                    <input type="text" id="author">
+                </li>
+            </ul>
+            <button type="reset">취소하기</button>
+            <button id="save">저장하기</button>
+        </form>
+        <ul id="bookList"></ul>
+    </div>
+
+    <script>
+        // 책 제목, 저자를 입력하는 input 요소
+        const inputTitle = document.getElementById("title");
+        const inputAuthor = document.getElementById("author");
+
+        // 저장하기 버튼 요소
+        const btnSave = document.getElementById("save");
+
+        // 책 목록을 나열하기 위한 ul 요소
+        const bookList = document.getElementById("bookList");
+
+        btnSave.addEventListener("click", (e) => {
+            // form 요소의 전송 요청 차단
+            e.preventDefault();
+
+            // li 요소 생성
+            const item = document.createElement("li");
+
+            // li 요소에 책 제목, 저자 텍스트 추가
+            item.innerHTML = `${inputTitle.value} - ${inputAuthor.value} <span class="delButton" style="color: red">삭제<span>`;
+
+            // 생성한 li 요소를 bookList의 자식 요소로 추가
+            bookList.appendChild(item);
+
+            // input 요소의 텍스트 초기화
+            inputTitle.value = "";
+            inputAuthor.value = "";
+
+            // .delButton 요소를 모두 선택
+            const delBtns = document.querySelectorAll(".delButton");
+        
+            // 해당 요소들에 click 이벤트 등록
+            for(let btn of delBtns){
+                btn.addEventListener("click", function(){
+                    let list = this.parentNode;
+
+                    list.parentNode.removeChild(list);
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
